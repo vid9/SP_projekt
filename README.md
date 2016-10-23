@@ -1,4 +1,4 @@
-#Poraba.si
+##Poraba.si
 
 Projekt pri predmetu spletno programiranje
 
@@ -9,7 +9,7 @@ Možno bo dodajati avtomobile, komentirati se bo dalo pod vse podatke uporabnika
 
 #Funkcionalnosti:
 
-	#Registriran uporabnik
+	Registriran uporabnik
 	
 		- Lahko dodaja avtomobile
 		- Dodaja podatke o porabi za vsak svoj avtomobil
@@ -18,12 +18,12 @@ Možno bo dodajati avtomobile, komentirati se bo dalo pod vse podatke uporabnika
 		- Pod avtomobile lahko komentira ali označi, če je z avtomobilom zadovoljen ali ne
 		- Kalkulator stroškov
 	
-	#Neregistriran uporabnik
+	Neregistriran uporabnik
 	
 		- Lahko išče po avtomobilih
 		- Kalkulator stroškov
 		
-	#Premium uporabniki
+	Premium uporabniki
 	
 		- Lahko dodajajo avtomobile
 		- Dodajajo podatke o porabi za vsak svoj avtomobil
@@ -31,7 +31,7 @@ Možno bo dodajati avtomobile, komentirati se bo dalo pod vse podatke uporabnika
 		- Lahko primerjajo porabo po znamkah avtomobilov
 		- Podatki o porabi so za zadnje polnjenje, za zadnjih 5 polnjenj, letni
 		- Pod avtomobile lahko komentirajo, jih označijo kot priljubljene ali označijo,
-		če so z avtomobilom zadovoljni ali ne
+			če so z avtomobilom zadovoljni ali ne
 		- Izračunajo porabo za določeno pot (npr. poraba za 700 km)
 		- Izbirajo tip avtomobila(mestni, 4x4, športni), ki bo vrnil avtomobile razvrščene po porabi
 		- Kalkulator stroškov
