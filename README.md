@@ -1,4 +1,4 @@
-##Poraba.si
+#Poraba.si
 
 Projekt pri predmetu spletno programiranje
 
@@ -7,7 +7,7 @@ Zatorej je edina smiselna rešitev imeti spletno stran, na kateri bodo dostopni 
 
 Možno bo dodajati avtomobile, komentirati se bo dalo pod vse podatke uporabnika(kot neka knjiga gostov) ter pod avtomobil(skupna poraba premium uporabnikov).
 
-#Funkcionalnosti:
+###Funkcionalnosti:
 
 	Registriran uporabnik
 	
