@@ -7,9 +7,10 @@ Zatorej je edina smiselna rešitev imeti spletno stran, na kateri bodo dostopni 
 
 Možno bo dodajati avtomobile, komentirati se bo dalo pod vse podatke uporabnika(kot neka knjiga gostov) ter pod avtomobil(skupna poraba premium uporabnikov).
 
-Funkcionalnosti:
+#Funkcionalnosti:
 
-	Registriran uporabnik
+	#Registriran uporabnik
+	
 		- Lahko dodaja avtomobile
 		- Dodaja podatke o porabi za vsak svoj avtomobil
 		- Išče po podatkih drugih uporabnikov ali po posameznih avtomobilih
@@ -17,17 +18,20 @@ Funkcionalnosti:
 		- Pod avtomobile lahko komentira ali označi, če je z avtomobilom zadovoljen ali ne
 		- Kalkulator stroškov
 	
-	Neregistriran uporabnik
+	#Neregistriran uporabnik
+	
 		- Lahko išče po avtomobilih
 		- Kalkulator stroškov
 		
-	Premium uporabniki
+	#Premium uporabniki
+	
 		- Lahko dodajajo avtomobile
 		- Dodajajo podatke o porabi za vsak svoj avtomobil
 		- Iščejo po podatkih drugih uporabnikov ali po posameznih avtomobilih
 		- Lahko primerjajo porabo po znamkah avtomobilov
 		- Podatki o porabi so za zadnje polnjenje, za zadnjih 5 polnjenj, letni
-		- Pod avtomobile lahko komentirajo, jih označijo kot priljubljene ali označijo, če so z avtomobilom zadovoljni ali ne
+		- Pod avtomobile lahko komentirajo, jih označijo kot priljubljene ali označijo,
+		če so z avtomobilom zadovoljni ali ne
 		- Izračunajo porabo za določeno pot (npr. poraba za 700 km)
 		- Izbirajo tip avtomobila(mestni, 4x4, športni), ki bo vrnil avtomobile razvrščene po porabi
 		- Kalkulator stroškov
