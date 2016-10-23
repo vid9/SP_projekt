@@ -17,11 +17,15 @@ Možno bo dodajati avtomobile, komentirati se bo dalo pod vse podatke uporabnika
 		- vidi podatke o porabi za zadnje polnjenje in zadnjih 5 polnjenj
 		- Pod avtomobile lahko komentira ali označi, če je z avtomobilom zadovoljen ali ne
 		- Kalkulator stroškov
+		
+		
 	
 	Neregistriran uporabnik
 	
 		- Lahko išče po avtomobilih
 		- Kalkulator stroškov
+		
+		
 		
 	Premium uporabniki
 	
