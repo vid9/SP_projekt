@@ -1,31 +1,3 @@
-header, footer {
-  background:#101010 ;
-}
-.header-links {
-  float:right;
-  clear:right;
-}
-footer {
-  clear:both;
-}
-body {
-  background:grey;
-  margin: auto;
-}
-
-.centered-content {
-  /*max-width:960px;*/
-}
-
-.main {
-  min-height:1000px;
-  background:#E8E8E8;
-}
-
-.content {
-  margin-left: 100px;
-  margin-top: 200px;
-}
 article form label {
   float:left;
   width:120px;
@@ -44,10 +16,6 @@ article form textarea {
 nav {
   display:block;
   width:20%;
-  float:left;
-}
-.content {
-  width:75%;
   float:left;
 }
 

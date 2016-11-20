@@ -1,110 +1,126 @@
  <!DOCTYPE html>
 <html>
+ <link rel="stylesheet" href="cssheets/main.css">
+ <link rel="stylesheet" href="cssheets/stil.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+ <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+ <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+ <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <style>
+   body,h1,h2,h3,h4,h5,h6 {
+     font-family: "Lato", sans-serif
+   }
+   .navbar ,h1,button {
+     font-family: "Montserrat", sans-serif
+   }
+ </style>
   <head>
     <title>Poraba - mi skrbimo za vas</title>
-    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"> 
-    <link rel="stylesheet" href="stil.css">
   </head>
-  <script src="login.js"></script>
+  <script src="jsscripts/login.js"></script>
+  <script src="jsscripts/registration.js"></script>
+ <script src="jsscripts/navSmall.js"></script>
   <body>
+    <!-- Navbar -->
+    <div class="top">
+      <ul class="navbar red card-2 left-align large">
+        <li class="hide-medium hide-large opennav right"> <!-- TODO opennav -->
+          <a class="padding-large hover-white large red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+        </li>
+        <li><a href="#" class="padding-large white">PORABA</a></li>
+        <li class="hide-small"><a href="#" class="padding-large hover-white">PRIJAVA</a>
+        </li>
+        <li class="hide-small"><a href="#" class="padding-large hover-white">REGISTRACIJA</a>
+        </li>
+        <li class="hide-small"><a href="#" class="padding-large hover-white">Link 3</a></li>
+        <li class="hide-small"><a href="#" class="padding-large hover-white">Link 4</a></li>
+      </ul>
+      <div id="navSmall" class="hide hide-large hide-medium">
+        <ul class="navbar left-align large black">
+          <li><a class="padding-large" href="#">PRIJAVA</a></li>
+          <li><a class="padding-large" href="#">REGISTRACIJA</a></li>
+          <li><a class="padding-large" href="#">Link 3</a></li>
+          <li><a class="padding-large" href="#">Link 4</a></li>
+        </ul>
+      </div>
+    </div>
+    <header class="container red center padding-128">
+      <h1 class="margin jumbo">DOBRODOŠLI</h1>
+      <p class="xlarge">Naj bodo vaše poti vedno skrbno načrtovane</p>
+    </header>
+    <!-- header
     <header>
       <div class="header-content centered-content">
        <a href="/"><img src="assets/avto.png" alt="logo" height="3%" width="3%"/></a>
         <span><strong style="color:white">Dobrodošli!</strong></span>
       </div>
     </header>
-    <div class="header-links">
-    <a href="#popupPrijava">Prijava</a>
-      <div id="popupPrijava" class="overlay">
-        <div class="popup">
-          <a class="close" href="#"><img style="width: 50px; height: 50px;"  src="assets/close.png"></a>
-          <div class="popcontent">
-            <form action="">
-              <br>
-              Uporabniško ime:<br>
-              <input type="text" class="prijava" name="userid" style="width:40%;"><br><br>
-              Geslo:<br>
-              <input type="password" class="prijava" name="pwd" style="width:40%;"><br><br>
-              <input type="button" class="prijava" value="Prijava" style="background:#E8E8E8;width:20%;" onclick="return check(form)">
-            </form>
+    -->
+    <!-- First Grid -->
+    <div class="light-grey row-padding padding-32 container">
+      <div class="content">
+        <h1>Išči po avtomobilih</h1>
+        <img class="third right padding-large" src="assets/kamion.jpg" alt="avto"/>
+        <!--    <h5 class="padding-large center">Podatki o avtomobilu</h5> -->
+            <table class="table striped padding-large left">
+              <tr>
+                <th>Specifikacije</th>
+                <th>Vrednost</th>
+              </tr>
+              <tr>
+                <td>Tip goriva</td>
+                <td>Dizel</td>
+              </tr>
+              <tr>
+                <td>Velikost rezervoarja</td>
+                <td>67.5 l</td>
+              </tr>
+              <tr>
+                <td>Višina</td>
+                <td>1484 mm</td>
+              </tr>
+              <tr>
+                <td>Povprečna poraba</td>
+                <td>6,4 l na 100 km</td>
+              </tr>
+            </table>
           </div>
         </div>
-      </div>
-    <a href="#popupRegistracija">Registracija</a>
-      <div id="popupRegistracija" class="overlay">
-        <div class="popup">
-          <a class="close" href="#"><img style="width: 50px; height: 50px;"  src="assets/close.png"></a>
-          <div class="popcontent">
-            <form action="">
-              Uporabniško ime:<br>
-              <input type="text" class="prijava" name="userid" style="width:40%;"><br><br>
-              Geslo:<br>
-              <input type="password" class="prijava" name="pwd" style="width:40%;"><br><br>
-              E-pošta:<br>
-              <input type="email" class="prijava" name="mail" style="width:40%;"><br><br>
-              <input type="submit" class="prijava" value="Registracija" style="background:#E8E8E8;width:25%;">
-              <script src="registration.js"></script>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="main centered-content">
-      <section class="content">
-        <h1>Išči po avtomobilih:</h1>
-        <div style="display:block;text-align: left";><img style="float: left"; src="assets/kamion.jpg" alt="avto" height="30%" width="30%"/>
-          <div style="float: left;margin-left: 10px"><b style="list-style-type:square">Podatki o avtomobilu:</b></br></br>Tle pa piše kar neki o avti in bla bla
-            in še mal bla bla bla
-          </div>
-          <div>
-            Proizvajalec:
-              <select>
-              <option value="volvo">Volvo</option>
-              <option value="saab">Saab</option>
-              <option value="opel">Opel</option>
-              <option value="audi">Audi</option>
-              </select>
-              </br></br></br>
-            Avtomobil:
-              <select>
-              <option value="volvo">S60</option>
-              </select>
-              </br></br></br>
-            Model:
-              <select>
-              <option value="volvo">T5 FWD</option>
-              </select>
-          </div></div>
-        <!--
-        <article>
-          <h2>Nove slike za RPi</h2>
-          <p>Na voljo so nove slike za Raspberry PI. Omogočajo zajem temperature in vlažnosti na senzorjih DHT-11. Dobite jih tu.</p>
-          <p>Objavil Matevž <time datetime="2016-03-05T19:15">v nedeljo ob 19:15</time>.</p>
-          <div class="comment">
-            <h3>Komentirajte</h3>
-            <form class="article-comment" method="POST" action="/send_comment">
-              <label>Vaše ime:</label> <input type="text" name="user" pattern=".* .*" title="Vpišite dve besedi" placeholder="ime priimek" required />
-              <label>Vaše email:</label> <input type="email" name="user" required />
-              <label>Komentar:</label> <textarea name="message" rows="10" cols="30" placeholder="" required></textarea>
-              <label class="no-fixed-width"><input type="checkbox" required />Nisem robot</label>
-              <label><input type="submit" value="Pošlji komentar" /></label>
 
-            </form>
+        <div class="main centered-content">
+          <section class="content">
+            <h1>Išči po avtomobilih:</h1>
+
+              <div style="float: left;margin-left: 10px"><b style="list-style-type:square">Podatki o avtomobilu:</b></br></br>Tle pa piše kar neki o avti in bla bla
+                in še mal bla bla bla
+              </div>
+              <div  class="options">
+                Proizvajalec:
+                  <select>
+                  <option value="volvo">Volvo</option>
+                  <option value="saab">Saab</option>
+                  <option value="opel">Opel</option>
+                  <option value="audi">Audi</option>
+                  </select>
+                  </br></br></br>
+                Avtomobil:
+                  <select>
+                  <option value="volvo">S60</option>
+                  </select>
+                  </br></br></br>
+                Model:
+                  <select>
+                  <option value="volvo">T5 FWD</option>
+                  </select>
+              </div></div>
+          </section>
+        </div>
+        <footer>
+          <div class="centered-content">
+            <a href="/legal.html">Pravna obvestila</a> |
+            <a href="/authors.html">Avtor strani</a>
           </div>
-        </article>
-        <article>
-          <h2>Delavnica</h2>
-          <p>V torek, 18. prosinca, organiziramo delavnico za pihanje toplega zraka. Vse, ki imate zadovoljivo kapaciteto pljuč in zdravo srce, vabimo, da se udeležite delavnice.</p><p>Pridite, zabavno bo!</p>
-          <p>Objavil Aljoša v <time datetime="2016-01-04T11:15">ponedeljek ob 19:15</time>.</p>
-        </article>
-        -->
-      </section>
-    </div>
-    <footer>
-      <div class="centered-content">
-        <a href="/legal.html">Pravna obvestila</a> |
-        <a href="/authors.html">Avtor strani</a>
-      </div>
-    </footer>
-  </body>
-</html> 
+        </footer>
+      </body>
+    </html>
