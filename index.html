@@ -21,52 +21,54 @@
   <script src="jsscripts/login.js"></script>
   <script src="jsscripts/registration.js"></script>
  <script src="jsscripts/navSmall.js"></script>
-  <body>
+  <body style="margin: auto">
     <!-- Navbar -->
-    <div class="top">
+    <div style="position:fixed;width:100%;z-index:1;top:0">
       <ul class="navbar red card-2 left-align large">
         <li class="hide-medium hide-large opennav right"> <!-- TODO opennav -->
-          <a class="padding-large hover-white large red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+          <a class="nav-menu" href="javascript:void(0);" onclick="smallBar()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
         </li>
-        <li><a href="#" class="padding-large white">PORABA</a></li>
-        <li class="hide-small"><a href="#" class="padding-large hover-white">PRIJAVA</a>
+        <li><a href="#" class="home">PORABA</a></li>
+        <li class="hide-small"><a href="#" class="link link-hover">PRIJAVA</a> <!-- done -->
         </li>
-        <li class="hide-small"><a href="#" class="padding-large hover-white">REGISTRACIJA</a>
+        <li class="hide-small"><a href="#" class="link link-hover">REGISTRACIJA</a> <!-- done -->
         </li>
-        <li class="hide-small"><a href="#" class="padding-large hover-white">Link 3</a></li>
-        <li class="hide-small"><a href="#" class="padding-large hover-white">Link 4</a></li>
+        <li class="hide-small"><a href="#" class="link link-hover">Link 3</a></li> <!-- done -->
+        <li class="hide-small"><a href="#" class="link link-hover">Link 4</a></li> <!-- done -->
       </ul>
+        <!-- Navbar for small screens -->
       <div id="navSmall" class="hide hide-large hide-medium">
-        <ul class="navbar left-align large black">
-          <li><a class="padding-large" href="#">PRIJAVA</a></li>
-          <li><a class="padding-large" href="#">REGISTRACIJA</a></li>
-          <li><a class="padding-large" href="#">Link 3</a></li>
-          <li><a class="padding-large" href="#">Link 4</a></li>
+        <ul class="navbar nav-list">
+          <li><a style="padding:12px 24px" href="#">PRIJAVA</a></li>
+          <li><a style="padding:12px 24px" href="#">REGISTRACIJA</a></li>
         </ul>
       </div>
     </div>
-    <header class="container red center padding-128">
-      <h1 class="margin jumbo">DOBRODOŠLI</h1>
-      <p class="xlarge">Naj bodo vaše poti vedno skrbno načrtovane</p>
+    <header> <!-- done -->
+      <h1 style="font-size:48px;margin:16px">DOBRODOŠLI</h1>
+      <p style="font-size:24px">Naj bodo vaše poti vedno skrbno načrtovane</p>
     </header>
-    <!-- header
-    <header>
-      <div class="header-content centered-content">
-       <a href="/"><img src="assets/avto.png" alt="logo" height="3%" width="3%"/></a>
-        <span><strong style="color:white">Dobrodošli!</strong></span>
-      </div>
-    </header>
-    -->
     <!-- First Grid -->
-    <div class="light-grey row-padding padding-32 container">
+    <div class="first-grid row-padding container">
       <div class="content">
-        <h1>Išči po avtomobilih</h1>
-        <img class="third right padding-large" src="assets/kamion.jpg" alt="avto"/>
-        <!--    <h5 class="padding-large center">Podatki o avtomobilu</h5> -->
-            <table class="table striped padding-large left">
+        <h1 style="text-align:center;padding:12px 24px">Išči po avtomobilih</h1>
+        <select class="quarter options-left">Volvo</option>
+          <option value="saab">Saab</option>
+          <option value="opel">Opel</option>
+          <option value="audi">Audi</option>
+        </select>
+        <select class="quarter options-mid" name="option">
+          <option value="volvo">S60</option>
+        </select>
+        <select class="options-right quarter" name="option">
+          <option value="volvo">T5 FWD</option>
+        </select>
+        <img class="third img-iskanje" src="assets/kamion.jpg" alt="avto"/>
+            <h5 style="padding:8px 0px 0px 100px;float:left;font-size:36px">Podatki o avtomobilu</h5>
+            <table class="table striped half">
               <tr>
-                <th>Specifikacije</th>
-                <th>Vrednost</th>
+                <th style="font-size:18px">Specifikacije</th>
+                <th style="font-size:18px">Vrednost</th>
               </tr>
               <tr>
                 <td>Tip goriva</td>
@@ -86,35 +88,6 @@
               </tr>
             </table>
           </div>
-        </div>
-
-        <div class="main centered-content">
-          <section class="content">
-            <h1>Išči po avtomobilih:</h1>
-
-              <div style="float: left;margin-left: 10px"><b style="list-style-type:square">Podatki o avtomobilu:</b></br></br>Tle pa piše kar neki o avti in bla bla
-                in še mal bla bla bla
-              </div>
-              <div  class="options">
-                Proizvajalec:
-                  <select>
-                  <option value="volvo">Volvo</option>
-                  <option value="saab">Saab</option>
-                  <option value="opel">Opel</option>
-                  <option value="audi">Audi</option>
-                  </select>
-                  </br></br></br>
-                Avtomobil:
-                  <select>
-                  <option value="volvo">S60</option>
-                  </select>
-                  </br></br></br>
-                Model:
-                  <select>
-                  <option value="volvo">T5 FWD</option>
-                  </select>
-              </div></div>
-          </section>
         </div>
         <footer>
           <div class="centered-content">
