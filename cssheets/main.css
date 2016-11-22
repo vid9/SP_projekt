@@ -329,7 +329,7 @@ header{
     color:#000;
     background-color:#f1f1f1;
     padding-top:32px;
-    padding-bottom:32px;
+    padding-bottom:64px;
 }
 
 .nav-list{
@@ -337,6 +337,18 @@ header{
     font-size:18px;
     color:#fff;
     background-color:#000;
+}
+
+.kalkulator{
+    color:#000;
+    background-color:ghostwhite;
+    padding-top:64px;
+    padding-bottom:64px;
+}
+
+#map {
+    height: 400px;
+    width: 100%;
 }
 
 /*Od tukaj naprej je custom*/
