@@ -106,8 +106,8 @@
                        placeholder="Enter an origin location">
                 <input id="destination-input" class="controls" type="text"
                        placeholder="Enter a destination location">
-                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD9HmuTa-0Ts3FmHMGAPsflec_BdOpmyNk&libraries=geometry"></script>
-                <button id=button class="button" onclick="return computeDistanceBetween(decodePath(document.getElementById('origin-input').value),decodePath(document.getElementById('destiontion-input').value))">Izračunaj!</button>
+                <button id=razdaljabut class="button"  value="Izračunaj" onclick="calculateDistance()"></button>
+                <input id="dist" type="text">
                 <div id="map"></div>
                 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD9HmuTa-0Ts3FmHMGAPsflec_BdOpmyNk&libraries=places&callback=initMap"
                         async defer></script>

@@ -2,20 +2,25 @@
  * Created by vidce on 22. 11. 2016.
  */
 
+var map;
+
 function initMap() {
     var origin_place_id = null;
     var destination_place_id = null;
     var ljubljana = {lat: 46.056946, lng: 14.505751};
-    var map = new google.maps.Map(document.getElementById('map'), {
+    map = new google.maps.Map(document.getElementById('map'), {
         mapTypeControl: false,
         center: ljubljana,
         zoom: 8
     });
 
+    google.maps.event.addDomListener(window,"load", calculateDistance);
 
+    var travel_mode = 'DRIVING'
     var directionsService = new google.maps.DirectionsService;
     var directionsDisplay = new google.maps.DirectionsRenderer;
     directionsDisplay.setMap(map);
+
 
     var origin_input = document.getElementById('origin-input');
     var destination_input = document.getElementById('destination-input');
@@ -88,28 +93,53 @@ function initMap() {
     }
 }
 
-var rad = function(x) {
-    return x * Math.PI / 180;
-};
+function calculateDistance(){
+    var origin = document.getElementById("origin-input").value;
+    var destination = document.getElementById("destination-input").value;
+    var service = new google.maps.DistanceMatrixService();
+    service.getDistanceMatrix(
+        {
+            origins: [origin],
+            destinations: [destination],
+            travelMode: google.maps.TravelMode.DRIVING,
+            avoidHighways: false,
+            avoidTolls: false,
+            unitSystem: google.maps.UnitSystem.IMPERIAL
+        },
+        callback
+    );
+}
 
-function razdalja(p1,p2) {
-    console.log(p1);
-    console.log(p2);
-    var R = 6378137; // Earth’s mean radius in meter
-    var dLat = rad(p2.lat() - p1.lat());
-    var dLong = rad(p2.lng() - p1.lng());
-    var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-        Math.cos(rad(p1.lat())) * Math.cos(rad(p2.lat())) *
-        Math.sin(dLong / 2) * Math.sin(dLong / 2);
-    var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-    var d = R * c;
-    return d; // returns the distance in meter
-};
+function callback(response, status) {
+    var orig = document.getElementById("origin-input"),
+        dest = document.getElementById("destination-input"),
+        dist = document.getElementById("dist");
 
-
-function deleteMarkers(markersArray) {
-    for (var i = 0; i < markersArray.length; i++) {
-        markersArray[i].setMap(null);
+    try{
+        if(status=="OK") {
+            orig.value = response.originAddresses[0];
+            dest.value = response.destinationAddresses[0];
+            dist.value = toFixed((response.rows[0].elements[0].distance.value)/1000,1);
+        } else {
+            alert("Error: " + status);
+        }
+    }catch(e){
+        if(e){
+            // If fails, Do something else
+        }
     }
-    markersArray = [];
-};
+}
+
+function toFixed(value, precision) {
+    var precision = precision || 0,
+        power = Math.pow(10, precision),
+        absValue = Math.abs(Math.round(value * power)),
+        result = (value < 0 ? '-' : '') + String(Math.floor(absValue / power));
+
+    if (precision > 0) {
+        var fraction = String(absValue % power),
+            padding = new Array(Math.max(precision - fraction.length, 0) + 1).join('0');
+        result += '.' + padding + fraction;
+    }
+    return result;
+}
