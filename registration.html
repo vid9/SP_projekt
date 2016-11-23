@@ -21,7 +21,7 @@
     <title>Poraba - mi skrbimo za vas</title>
 </head>
 <script src="jsscripts/login.js"></script>
-<script src="jsscripts/map.js"></script>
+<script src="jsscripts/redirect.js"></script>
 <script src="jsscripts/navSmall.js"></script>
 <body style="margin: auto">
     <!-- Navbar -->
@@ -35,35 +35,37 @@
             </li>
         </ul>
     </div>
-    <form action="form.asp" class="container login">
+    <div class="container login">
+    <!--<form action="redirect()" class="container login" method="get">action="form.asp"-->
         <h2 style="text-align: center; font-size: 50px; color: black">Prosimo vnesite podatke</h2>
         <div class="row form">
             <div class="col" style="width:50px; font-size:35px"><i class="fa fa-user"></i></div>
             <div class="skrij">
-                <input class="podatki" name="first" type="text" placeholder="Ime">
+                <input class="podatki" name="first" id="ime" type="text" placeholder="Ime" required="true">
             </div>
         </div>
         <div class="row form">
             <div class="col" style="width:50px; font-size:35px"><i class="fa fa-user"></i></div>
             <div class="skrij">
-                <input class="podatki" name="last" type="text" placeholder="Priimek">
+                <input class="podatki" name="last" id="priimek" type="text" placeholder="Priimek" required="true">
             </div>
         </div>
         <div class="row form">
             <div class="col" style="width:50px; font-size:35px"><i class="fa fa-envelope-o"></i></div>
             <div class="skrij">
-                <input class="podatki" name="email" type="text" placeholder="Email">
+                <input required="true" class="podatki" name="email" id="email" type="text" placeholder="Email">
             </div>
         </div>
         <div class="row form">
             <div class="col" style="width:50px; font-size:35px"><i class="fa fa-phone"></i></div>
             <div class="skrij">
-                <input class="podatki" name="phone" type="text" placeholder="Telefon">
+                <input class="podatki" name="phone" id="telefon" type="text" placeholder="Telefon" required="true">
             </div>
         </div>
         <p style="text-align: center">
-            <button class="gumb"> Pošlji </button>
+            <button class="gumb" onclick="previri()"> Pošlji </button>
         </p>
-    </form>
+    </div>
+    <!--</form>-->
 </body>
 </html>

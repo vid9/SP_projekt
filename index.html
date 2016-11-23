@@ -1,7 +1,7 @@
  <!DOCTYPE html>
 <html>
  <link rel="stylesheet" href="cssheets/main.css">
- <link rel="stylesheet" href="cssheets/stil.css">
+ <link rel="stylesheet" href="cssheets/login.css">
  <link rel="stylesheet" href="cssheets/maps.css">
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
@@ -28,7 +28,27 @@
         <ul class="topnav" id="navigation">
             <li><a class="active" href="#home">DOMOV</a></li>
             <li><a href="registration.html">REGISTRACIJA</a></li>
-            <li style="float: right;"><a href=login.html>PRIJAVA</a></li>
+            <li style="float: right;"  onclick="document.getElementById('login').style.display='block'"><a href="#">PRIJAVA</a></li>
+            <div id="login" class="login-popup">
+                <form class="login-content animate">
+                    <div class="imgcontainer">
+                        <span onclick="document.getElementById('login').style.display='none'" class="close" title="Zapri">&times;</span>
+                    </div>
+                    <div style="padding: 20px;">
+                        <label><b>Uporabniško ime</b></label>
+                        <input class="login-text" type="text" placeholder="Uporabniško ime" name="uname" required="true">
+                        <label><b>Geslo</b></label>
+                        <input class="login-password" type="password" placeholder="Geslo" name="psw" required="true">
+                        <button type="submit" ><a href="uporabnik.html">Prijava</a></button>
+                        <input type="checkbox" checked="checked"> Zapomni si me
+                    </div>
+                    <div style="padding: 20px;" style="background-color:#f1f1f1">
+                        <button type="button" onclick="document.getElementById('login').style.display='none'" class="cancelbtn">Cancel</button>
+                        <span class="psw">Forgot <a href="#">password?</a></span>
+                    </div>
+                </form>
+            </div>
+
             <li class="icon">
                 <a href="javascript:void(0);" onclick="smallBar()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
             </li>
@@ -104,10 +124,6 @@
         </div>
     </div>
         <footer>
-          <div class="centered-content">
-            <a href="/legal.html">Pravna obvestila</a> |
-            <a href="/authors.html">Avtor strani</a>
-          </div>
         </footer>
       </body>
     </html>

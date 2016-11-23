@@ -62,6 +62,12 @@ ul.topnav li.icon {
     }
 }
 
+@media screen and (max-width: 600px) {
+    body{
+        overflow-x:hidden!important;
+    }
+}
+
 @media screen and (max-width:601px) {
     ul.topnav {
         position: relative!important;
