@@ -2,6 +2,8 @@
  * Created by vidce on 22. 11. 2016.
  */
 
+//netcat -l myip
+
 var map;
 
 function CenterControl(controlDiv, map) {
@@ -52,13 +54,15 @@ function initMap() {
     google.maps.event.addDomListener(window,"load", calculateDistance);
 
     var travel_mode = 'DRIVING'
+    /*
     var directionsService = new google.maps.DirectionsService;
     var directionsDisplay = new google.maps.DirectionsRenderer;
-    directionsDisplay.setMap(map);
-
+    directionsDisplay.setMap(map); */
 
     var origin_input = document.getElementById('origin-input');
     var destination_input = document.getElementById('destination-input');
+
+    //google.maps.event.addDomListener(document.getElementById('centerControl'), 'click', calcRoute);
 
     map.controls[google.maps.ControlPosition.TOP_LEFT].push(origin_input);
     map.controls[google.maps.ControlPosition.TOP_LEFT].push(destination_input);
@@ -79,6 +83,26 @@ function initMap() {
         }
     }
 
+    function calcRoute() {
+        var start = new google.maps.LatLng(37.334818, -121.884886);
+        //var end = new google.maps.LatLng(38.334818, -181.884886);
+        var end = new google.maps.LatLng(37.441883, -122.143019);
+        var request = {
+            origin: start,
+            destination: end,
+            travelMode: google.maps.TravelMode.DRIVING
+        };
+        directionsService.route(request, function(response, status) {
+            if (status == google.maps.DirectionsStatus.OK) {
+                directionsDisplay.setDirections(response);
+                directionsDisplay.setMap(map);
+            } else {
+                alert("Directions Request from " + start.toUrlValue(6) + " to " + end.toUrlValue(6) + " failed: " + status);
+            }
+        });
+    }
+
+    /*
     origin_autocomplete.addListener('place_changed', function() {
         var place = origin_autocomplete.getPlace();
         if (!place.geometry) {
@@ -109,6 +133,7 @@ function initMap() {
             directionsService, directionsDisplay);
     });
 
+
     function route(origin_place_id, destination_place_id, travel_mode,
                    directionsService, directionsDisplay) {
         if (!origin_place_id || !destination_place_id) {
@@ -126,6 +151,7 @@ function initMap() {
             }
         });
     }
+    */
 }
 
 function calculateDistance(){

@@ -108,7 +108,7 @@
     <!-- Kalkulator stroskov -->
     <div class="row-padding kalkulator container">
         <div class="content">
-            <div class="twothird">
+            <div class="row-padding">
                 <h1>Kalkulator stroskov</h1>
                 <h5 style="padding-top:32px;padding-bottom:32px;">Načrtujte svojo pot preprosto in z nadzorovano porabo.</h5>
                 <input id="origin-input" class="controls" type="text"
@@ -116,7 +116,8 @@
                 <input id="destination-input" class="controls" type="text"
                        placeholder="Vpiši končno lokacijo">
                 <input id="dist" type="text">
-                <div id="map"></div>
+                <div id="map" class="row third" style="float:left;"></div>
+                <button class="gumb row" style="float: right;" onclick="calculateDistance()">Izračunaj</button>
                 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD9HmuTa-0Ts3FmHMGAPsflec_BdOpmyNk&libraries=places&callback=initMap"
                         async defer></script>
                 <div id="output" style="font-size: 11px"></div>

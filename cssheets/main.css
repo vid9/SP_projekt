@@ -278,6 +278,11 @@ header{
     width: 100%;
 }
 
+
+.komentarji-content {
+
+    
+}
 /*Od tukaj naprej je custom*/
 
 
@@ -289,3 +294,5 @@ footer {
     min-height:1000px;
     background:#E8E8E8;
 }
+
+
