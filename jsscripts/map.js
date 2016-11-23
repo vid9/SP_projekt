@@ -4,6 +4,35 @@
 
 var map;
 
+function CenterControl(controlDiv, map) {
+
+    // Set CSS for the control border.
+    var controlUI = document.createElement('div');
+    controlUI.style.backgroundColor = '#4CAF50';
+    controlUI.style.border = '10px';
+    controlUI.style.cursor = 'pointer';
+    controlUI.style.textAlign = 'center';
+    controlUI.title = 'Izračunaj razdaljo med podanima krajema';
+    controlDiv.appendChild(controlUI);
+
+    // Set CSS for the control interior.
+    var controlText = document.createElement('div');
+    controlText.style.color = 'rgb(25,25,25)';
+    controlText.style.fontFamily = 'Arial';
+    controlText.style.fontSize = '16px';
+    controlText.style.lineHeight = '38px';
+    controlText.style.paddingLeft = '5px';
+    controlText.style.paddingRight = '5px';
+    controlText.innerHTML = 'Izračunaj';
+    controlUI.appendChild(controlText);
+
+    // Setup the click event listeners: calculate the distance between places.
+    controlUI.addEventListener('click', function () {
+        calculateDistance();
+    });
+}
+
+
 function initMap() {
     var origin_place_id = null;
     var destination_place_id = null;
@@ -13,6 +42,12 @@ function initMap() {
         center: ljubljana,
         zoom: 8
     });
+
+    var centerControlDiv = document.createElement('div');
+    var centerControl = new CenterControl(centerControlDiv, map);
+
+    centerControlDiv.index = 1;
+    map.controls[google.maps.ControlPosition.TOP_RIGHT].push(centerControlDiv);
 
     google.maps.event.addDomListener(window,"load", calculateDistance);
 

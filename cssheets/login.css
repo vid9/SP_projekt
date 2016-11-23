@@ -1,0 +1,46 @@
+.login {
+    box-shadow:0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    color: #f44336;
+    background-color: #f1f1f1;
+    padding:40px 25px 40px 25px;
+    margin: 15px;
+    margin-top: 14%;
+}
+
+.form {
+    margin-top:24px;
+    margin-bottom:24px;
+}
+
+.skrij {
+    overflow:hidden;
+}
+
+.podatki{
+    padding:10px;
+    display:block;
+    border: 1px solid #808080;
+    width:100%
+}
+.podatki:not(:valid)~.w3-validate{
+    color:#f44336;
+    opacity: 0.5
+}
+
+.gumb {
+    background-color: #f44336;
+    margin-top:24px;
+    margin-bottom:24px;
+    border: none;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    padding: 12px 24px;
+    border-radius: 8px;
+}
+
+.gumb:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 30px 50px 0 rgba(0,0,0,0.19);
+}

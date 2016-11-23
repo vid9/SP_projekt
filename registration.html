@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+
+<link rel="stylesheet" href="cssheets/main.css">
+<link rel="stylesheet" href="cssheets/login.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"><style>
+    body,h1,h2,h3,h4,h5,h6 {
+        font-family: "Lato", sans-serif
+    }
+    .topnav ,h1,button {
+        font-family: "Montserrat", sans-serif
+    }
+</style>
+<head>
+    <title>Poraba - mi skrbimo za vas</title>
+</head>
+<script src="jsscripts/login.js"></script>
+<script src="jsscripts/map.js"></script>
+<script src="jsscripts/navSmall.js"></script>
+<body style="margin: auto">
+    <!-- Navbar -->
+    <div style="position:fixed;width:100%;z-index:1;top:0">
+        <ul class="topnav" id="navigation">
+            <li><a href="index.html">DOMOV</a></li>
+            <li><a class="active" href="registration.html">REGISTRACIJA</a></li>
+            <li style="float: right;"><a href=login.html>PRIJAVA</a></li>
+            <li class="icon">
+                <a href="javascript:void(0);" onclick="smallBar()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+            </li>
+        </ul>
+    </div>
+    <form action="form.asp" class="container login">
+        <h2 style="text-align: center; font-size: 50px; color: black">Prosimo vnesite podatke</h2>
+        <div class="row form">
+            <div class="col" style="width:50px; font-size:35px"><i class="fa fa-user"></i></div>
+            <div class="skrij">
+                <input class="podatki" name="first" type="text" placeholder="Ime">
+            </div>
+        </div>
+        <div class="row form">
+            <div class="col" style="width:50px; font-size:35px"><i class="fa fa-user"></i></div>
+            <div class="skrij">
+                <input class="podatki" name="last" type="text" placeholder="Priimek">
+            </div>
+        </div>
+        <div class="row form">
+            <div class="col" style="width:50px; font-size:35px"><i class="fa fa-envelope-o"></i></div>
+            <div class="skrij">
+                <input class="podatki" name="email" type="text" placeholder="Email">
+            </div>
+        </div>
+        <div class="row form">
+            <div class="col" style="width:50px; font-size:35px"><i class="fa fa-phone"></i></div>
+            <div class="skrij">
+                <input class="podatki" name="phone" type="text" placeholder="Telefon">
+            </div>
+        </div>
+        <p style="text-align: center">
+            <button class="gumb"> Pošlji </button>
+        </p>
+    </form>
+</body>
+</html>
