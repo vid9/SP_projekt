@@ -279,6 +279,20 @@ header{
 }
 
 
+.gumb {
+    background-color: #f44336;
+    margin-top:24px;
+    margin-bottom:24px;
+    border: none;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    padding: 12px 24px;
+    border-radius: 8px;
+}
+
 .komentarji-content {
 
     

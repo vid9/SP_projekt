@@ -23,12 +23,13 @@
 <script src="jsscripts/login.js"></script>
 <script src="jsscripts/redirect.js"></script>
 <script src="jsscripts/navSmall.js"></script>
-<body style="margin: auto">
+<script src="jsscripts/iskanjePoAvtomobilih.js"></script>
+<body style="margin: auto" onload="start()">
 <!-- Navbar -->
 <div style="position:fixed;width:100%;z-index:1;top:0">
     <ul class="topnav" id="navigation">
         <li><a href="index.html">DOMOV</a></li>
-        <li><a class="active" href="#">ISKANJE AVTOMOBILOV</a></li>
+        <li><a class="active" href="uporabnik.html">ISKANJE AVTOMOBILOV</a></li>
         <li style="float: right;"><a href="#">PROFIL</a></li>
         <li class="icon">
             <a href="javascript:void(0);" onclick="smallBar()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
@@ -36,23 +37,24 @@
     </ul>
 </div>
 <div class="first-grid row-padding container">
-    <div class="content" style="margin-top: 100px">
-        <select class="quarter options-left">
+    <div id="rezultat" class="content" style="margin-top: 50px">
+        <select id="Znamka" class="quarter options-left" >
             <option value="" disabled selected>Izberi znamko avtomobila</option>
-            <option value="saab">Saab</option>
-            <option value="opel">Opel</option>
+            <option value="audi">Audi</option>
+            <option value="bmw">Opel</option>
             <option value="volvo">Volvo</option>
         </select>
-        <select class="quarter options-mid" name="option">
+        <select id="Serija" class="quarter options-mid" name="option">
             <option value="" disabled selected>Serija</option>
             <option value="volvo">S60</option>
         </select>
-        <select class="options-right quarter" name="option">
+        <select id="Model" class="options-right quarter" name="option">
             <option value="" disabled selected>Model</option>
             <option value="volvo">T5 FWD</option>
         </select>
+        <p style="text-align:center;padding-top: 100px; font-size: 15px; color: darkgrey">Navodila: Najprej izberite znamko, nato serijo in na koncu model avtomobila. </p>
         <img class="third img-iskanje" src="assets/kamion.jpg" alt="avto"/>
-        <h5 style="padding:0px 0px 0px 100px;float:left;font-size:32px">Podatki o avtomobilu</h5>
+        <h5 style="padding:0px 0px 0px 100px;float:left;font-size:32px" class="hide">Podatki o avtomobilu</h5>
         <table class="table striped half">
             <tr>
                 <th style="font-size:18px">Specifikacije</th>
@@ -78,7 +80,9 @@
             <td>6,4 l na 100 km</td>
             </tr>
         </table>
+        <button class="gumb" onclick="loadCar()"> Išči </button>
     </div>
+    <p>Capture Image: <input type="file" accept="image/*" id="capture" capture="camera">
 </div>
 <div class="komentarji-content">
 
