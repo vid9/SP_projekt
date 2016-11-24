@@ -36,9 +36,7 @@ ul.topnav li.right {
 }
 
 @media screen and (max-width: 601px){
-    ul.topnav li.right,ul.topnav li {
-        float: none!important;
-    }
+
 }
 
 ul.topnav li a:hover {
@@ -49,6 +47,9 @@ ul.topnav li.icon {
 }
 
 @media screen and (max-width:601px) {
+    ul.topnav li.right,ul.topnav li {
+        float: none!important;
+    }
     ul.topnav li:not(:first-child) {
         display: none;
     }
@@ -60,15 +61,6 @@ ul.topnav li.icon {
         background-color: white;
         opacity: 0.9;
     }
-}
-
-@media screen and (max-width: 600px) {
-    body{
-        overflow-x:hidden!important;
-    }
-}
-
-@media screen and (max-width:601px) {
     ul.topnav {
         position: relative!important;
 
@@ -85,6 +77,12 @@ ul.topnav li.icon {
     ul.topnav.responsive li a {
         display: block!important;
         text-align: left!important;
+    }
+    body{
+        overflow-x:hidden!important;
+    }
+    .img-iskanje {
+        padding:50px 0px 0px 0px!important;
     }
 }
 
@@ -178,7 +176,6 @@ header{
 .row-padding,.row-padding>.half,.row-padding>.third,.row-padding>.twothird,.row-padding>.threequarter,.row-padding>.quarter,.row-padding>.col{
     padding:0 8px
 }
-
 
 .table{
     border-collapse:collapse;
