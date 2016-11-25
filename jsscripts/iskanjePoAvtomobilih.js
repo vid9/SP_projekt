@@ -2,16 +2,18 @@
  * Created by vidce on 23. 11. 2016.
  */
 
-
+//Adds listeners to selection and disables second and third selection
 function start(){
+    document.getElementById('capture').addEventListener('change', handleFileSelect, false);
     document.getElementById("Serija").addEventListener("change", enableModel, false);
     document.getElementById("Znamka").addEventListener("change", enableSerija, false);
     document.getElementById("Model").disabled = true;
     document.getElementById("Serija").disabled = true;
-    window.alert("loaded")
+    //window.alert("loaded")
     //document.getElementById("Serija").addEventListener("change", enableModel, false);
 }
 
+//This function enable selection with id Serija and populates it with data
 function enableModel(){
     document.getElementById("Model").disabled = false;
     removeOptions(document.getElementById("Model"));
@@ -78,7 +80,7 @@ function enableModel(){
     }
 }
 
-
+//This function enable selection with id Serija and populates it with data
 function enableSerija() {
     var index = document.getElementById("Serija");
     removeOptions(index);
@@ -153,7 +155,7 @@ function enableSerija() {
 
 }
 
-
+//Remove options from selectbox
 function removeOptions(selectbox)
 {
     var i;
@@ -163,8 +165,20 @@ function removeOptions(selectbox)
     }
 }
 
-var loadFile = function(event) {
-    var output = document.getElementById('output');
-    output.src = URL.createObjectURL(event.target.files[0]);
-};
+function handleFileSelect(evt) {
+    var files = evt.target.files; // FileList object
+    var reader = new FileReader();
+    f = files[0];
+    reader.onload = (function(theFile) {
+        return function(e) {
+            // add thumbnail.
+            var img = document.getElementById('output');
+            img.src = e.target.result;
+        };
+    })(f);
+
+    // Read in the image file as a data URL.
+    reader.readAsDataURL(f);
+}
+
 

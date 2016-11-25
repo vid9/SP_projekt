@@ -38,7 +38,7 @@
 </div>
 <div class="first-grid row-padding container">
     <div id="rezultat" class="content" style="margin-top: 50px">
-        <select id="Znamka" class="quarter options-left" >
+        <select id="Znamka" class="quarter options-left" autofocus>
             <option value="" disabled selected>Izberi znamko avtomobila</option>
             <option value="audi">Audi</option>
             <option value="bmw">Opel</option>
@@ -54,8 +54,8 @@
         </select>
         <button class="gumb" onclick="loadCar()"> Išči </button>
     </div>
-    <p>Capture Image: <input type="file" accept="image/*" id="capture" capture="camera" onchange="loadFile(event)">
-        <img id="output"/>
+    <p>Capture Image: <input type="file" accept="image/*" id="capture" capture="camera">
+        <img id="output" class="thumb">
 </div>
 <div class="komentarji-content">
 
