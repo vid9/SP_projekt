@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html>
+
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+
 <link rel="stylesheet" href="cssheets/main.css">
 <link rel="stylesheet" href="cssheets/login.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
@@ -10,7 +13,7 @@
     body,h1,h2,h3,h4,h5,h6 {
         font-family: "Lato", sans-serif
     }
-    h1,button {
+    .topnav ,h1,button {
         font-family: "Montserrat", sans-serif
     }
 </style>
@@ -27,7 +30,7 @@
     <ul class="topnav" id="navigation">
         <li><a href="index.html">DOMOV</a></li>
         <li><a href="uporabnik.html">ISKANJE AVTOMOBILOV</a></li>
-        <li style="float: right;"><a href="#">PROFIL</a></li>
+        <li style="float: right;"><a href="profil.html">PROFIL</a></li>
         <li class="icon">
             <a href="javascript:void(0);" onclick="smallBar()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
         </li>
@@ -35,15 +38,24 @@
 </div>
 <div class="first-grid row-padding container">
     <div id="rezultat" class="content" style="margin-top: 50px">
-        <select size="3">
-            <option value="volvo">Volvo</option>
-            <option value="saab">Saab</option>
-            <option value="opel">Opel</option>
+        <select id="Znamka" class="quarter options-left" >
+            <option value="" disabled selected>Izberi znamko avtomobila</option>
             <option value="audi">Audi</option>
+            <option value="bmw">Opel</option>
+            <option value="volvo">Volvo</option>
+        </select>
+        <select id="Serija" class="quarter options-mid" name="option">
+            <option value="" disabled selected>Serija</option>
+            <option value="volvo">S60</option>
+        </select>
+        <select id="Model" class="options-right quarter" name="option">
+            <option value="" disabled selected>Model</option>
+            <option value="volvo">T5 FWD</option>
         </select>
         <button class="gumb" onclick="loadCar()"> Išči </button>
     </div>
-    <p>Capture Image: <input type="file" accept="image/*" id="capture" capture="camera">
+    <p>Capture Image: <input type="file" accept="image/*" id="capture" capture="camera" onchange="loadFile(event)">
+        <img id="output"/>
 </div>
 <div class="komentarji-content">
 

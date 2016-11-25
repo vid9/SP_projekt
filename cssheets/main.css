@@ -94,7 +94,7 @@ ul.topnav li.icon {
     overflow-x:auto
 }
 
-.container:after,.panel:after,.row:after,.row-padding:after,.topnav:after,.clear:after,.btn-group:before,.btn-group:after,.btn-bar:before,.btn-bar:after
+.container:after,.panel:after,.row:after,.row-padding:after,.content:after,.topnav:after,.clear:after,.table:before,.img-iskanje:after
 {
     content:"";
     display:table;
@@ -160,6 +160,11 @@ header{
 }
 
 .content{
+    max-width:1080px;
+    margin:auto
+}
+
+.content1{
     max-width:1080px;
     margin:auto
 }
@@ -290,6 +295,16 @@ header{
     border-radius: 8px;
 }
 
+.options-profil {
+    float:left;
+    padding:20px;
+    font-size: 30px;
+    margin: 10px;
+    color:#000;
+    border:1px solid #ccc;
+    border-bottom:2px solid #009688;
+}
+
 .komentarji-content {
 
     
@@ -305,5 +320,7 @@ footer {
     min-height:1000px;
     background:#E8E8E8;
 }
+
+
 
 

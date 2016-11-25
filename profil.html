@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
 <link rel="stylesheet" href="cssheets/main.css">
 <link rel="stylesheet" href="cssheets/login.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
@@ -22,12 +21,12 @@
 <script src="jsscripts/redirect.js"></script>
 <script src="jsscripts/navSmall.js"></script>
 <script src="jsscripts/iskanjePoAvtomobilih.js"></script>
-<body style="margin: auto" onload="start()">
+<body style="margin: auto">
 <!-- Navbar -->
 <div style="position:fixed;width:100%;z-index:1;top:0">
     <ul class="topnav" id="navigation">
         <li><a href="index.html">DOMOV</a></li>
-        <li><a href="uporabnik.html">ISKANJE AVTOMOBILOV</a></li>
+        <li><a href="uporabnik.html">POIŠČI AVTOMOBIL</a></li>
         <li><a href="uporabnik.html">DODAJ AVTOMOBIL</a></li>
         <li style="float: right;"><a href="#">PROFIL</a></li>
         <li class="icon">
@@ -36,13 +35,49 @@
     </ul>
 </div>
 <div class="first-grid row-padding container">
-    <div id="rezultat" class="content" style="margin-top: 50px">
-    <nav>
-
-
-    </nav>
+    <div id="rezultat" class="content" style="margin-top: 50px;margin-bottom: 50px">
+        <h2 style="padding: 10px">Moji avtomobili:</h2>
+        <select size="3" class="options-profil half">
+            <option value="volvo">Volvo A8 super edition</option>
+            <option value="saab">Saab</option>
+            <option value="opel">Opel</option>
+        </select>
+        <img class="third img-iskanje" style="float: right;padding: 0px" src="assets/kamion.jpg" alt="avto"/>
+        <form action="poraba.php" style="float: left;">
+            Poraba: <input type="number" name="poraba" step="0.1" class="podatki" value="6.0"><br>
+            <input type="submit" value="Submit" class="gumb">
+        </form>
     </div>
-    <p>Capture Image: <input type="file" accept="image/*" id="capture" capture="camera">
+    <hr>
+    <div id="podatki" class="content" style="margin-top: 100px">
+        <table class="table striped half" style="float: left!important;font-size: 20px; margin-top: 40px">
+            <tr>
+                <th style="font-size:25px">Specifikacije</th>
+                <th style="font-size:25px">Vrednost</th>
+            </tr>
+            <tr>
+                <td>Višina</td>
+                <td>1484 mm</td>
+            </tr>
+            <tr>
+                <td>Dolžina</td>
+                <td>3562 mm</td>
+            </tr>
+            <tr>
+                <td>Tip goriva</td>
+                <td>Dizel</td>
+            </tr>
+            <tr>
+                <td>Velikost rezervoarja</td>
+                <td>67.5 l</td>
+            </tr>
+            <td>Povprečna poraba</td>
+            <td>6,4 l na 100 km</td>
+            </tr>
+        </table>
+        <img class="third img-iskanje" style="float: right!important;padding: 0px" src="assets/graph.jpg" alt="graf"/>
+    </div>
+    <hr>
 </div>
 <div class="komentarji-content">
 
