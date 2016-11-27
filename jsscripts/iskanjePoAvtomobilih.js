@@ -3,6 +3,19 @@
  */
 
 //Adds listeners to selection and disables second and third selection
+
+function komentar() {
+    var div = document.createElement('div');
+    div.className = 'komentarji1';
+    var ime = document.createElement('h2');
+    ime.innerHTML = "Uporabnik";
+    var kom = document.createTextNode(document.getElementById("comments").textContent);
+    div.appendChild(ime);
+    div.appendChild(kom);
+    document.getElementById("section").appendChild(div);
+    console.log("asd")
+}
+
 function start(){
     document.getElementById("Serija").addEventListener("change", enableModel, false);
     document.getElementById("Znamka").addEventListener("change", enableSerija, false);
@@ -170,6 +183,8 @@ function tabela() {
     document.getElementById('c1').style.display = "block";
     document.getElementById('c2').style.display = "block";
     document.getElementById('c3').style.display = "block";
+    document.getElementById('com').style.display = "block";
+    document.getElementById('but1').style.display = "block";
     if (document.getElementById("Serija").selectedIndex != 0 &&  document.getElementById("Znamka").selectedIndex != 0 && document.getElementById("Znamka").selectedIndex != 0) {
         var znamka = document.getElementById('Znamka').value
         if(znamka == "audi") {

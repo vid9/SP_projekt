@@ -94,7 +94,7 @@ ul.topnav li.icon {
     overflow-x:auto
 }
 
-.container:after,.panel:after,.row:after,.row-padding:after,.content:after,.topnav:after,.clear:after,.table:before,.img-iskanje:after
+.container:after,.panel:after,.row:after,.row-padding:after,.content:after,.table:before,.img-iskanje:after
 {
     content:"";
     display:table;
@@ -316,6 +316,15 @@ div.komentarji {
     display: none;
 }
 
+div.komentarji1 {
+    background-color: darkgrey;
+    color: black;
+    margin: 20px 0 20px 0;
+    padding: 20px;
+    display: block;
+
+}
+
 .thumb {
     height: 100px;
     width: 100px;
@@ -351,5 +360,10 @@ footer {
     text-align: center;
 }
 
+.kom-box {
+    width: 100%;
+    height: 100px;
+    font-size: 20px;
+}
 
 
