@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="64120df7-935b-4571-9765-462c5cfda354" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/profil.html" afterPath="$PROJECT_DIR$/profil.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
     </list>
     <ignored path="SP_projekt.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,16 +26,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="25" column="29" lean-forward="false" selection-start-line="25" selection-start-column="29" selection-end-line="25" selection-end-column="29" />
+            <state relative-caret-position="352">
+              <caret line="28" column="139" lean-forward="false" selection-start-line="28" selection-start-column="139" selection-end-line="28" selection-end-column="139" />
               <folding>
                 <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#li#2;n#ul#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="e#1770#1777#0" expanded="true" />
+                <element signature="e#1772#1779#0" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#form#0;n#div#0;n#li#2;n#ul#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#2;n#form#0;n#div#0;n#li#2;n#ul#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#button#0;n#div#2;n#form#0;n#div#0;n#li#2;n#ul#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -94,10 +95,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="login.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cssheets/login.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="158">
+            <state relative-caret-position="1760">
               <caret line="80" column="6" lean-forward="false" selection-start-line="80" selection-start-column="1" selection-end-line="80" selection-end-column="6" />
               <folding />
             </state>
@@ -248,6 +249,7 @@
       <find>options-p</find>
       <find>cancel</find>
       <find>footer</find>
+      <find>close</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -283,9 +285,9 @@
         <option value="$PROJECT_DIR$/uporabnik.html" />
         <option value="$PROJECT_DIR$/cssheets/main.css" />
         <option value="$PROJECT_DIR$/jsscripts/iskanjePoAvtomobilih.js" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/indexloged.html" />
         <option value="$PROJECT_DIR$/profil.html" />
+        <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
@@ -466,7 +468,7 @@
       <workItem from="1480037565677" duration="204000" />
       <workItem from="1480075831889" duration="670000" />
       <workItem from="1480155221210" duration="22991000" />
-      <workItem from="1480273161408" duration="13551000" />
+      <workItem from="1480273161408" duration="13673000" />
     </task>
     <task id="LOCAL-00001" summary="added login and register options">
       <created>1479071212620</created>
@@ -500,7 +502,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="141630000" />
+    <option name="totallyTimeSpent" value="141752000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="81" y="10" width="1798" height="913" extended-state="0" />
@@ -604,7 +606,7 @@
             <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#li#2;n#ul#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#1770#1777#0" expanded="true" />
+            <element signature="e#1772#1779#0" expanded="true" />
             <element signature="n#style#0;n#div#1;n#form#0;n#div#0;n#li#2;n#ul#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#2;n#form#0;n#div#0;n#li#2;n#ul#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#button#0;n#div#2;n#form#0;n#div#0;n#li#2;n#ul#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -683,7 +685,7 @@
             <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#li#2;n#ul#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#1770#1777#0" expanded="true" />
+            <element signature="e#1772#1779#0" expanded="true" />
             <element signature="n#style#0;n#div#1;n#form#0;n#div#0;n#li#2;n#ul#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#2;n#form#0;n#div#0;n#li#2;n#ul#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#button#0;n#div#2;n#form#0;n#div#0;n#li#2;n#ul#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -763,7 +765,7 @@
             <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#li#2;n#ul#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#1770#1777#0" expanded="true" />
+            <element signature="e#1772#1779#0" expanded="true" />
             <element signature="n#style#0;n#div#1;n#form#0;n#div#0;n#li#2;n#ul#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#2;n#form#0;n#div#0;n#li#2;n#ul#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#button#0;n#div#2;n#form#0;n#div#0;n#li#2;n#ul#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -1030,15 +1032,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/cssheets/login.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1760">
+          <caret line="80" column="6" lean-forward="false" selection-start-line="80" selection-start-column="1" selection-end-line="80" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="25" column="29" lean-forward="false" selection-start-line="25" selection-start-column="29" selection-end-line="25" selection-end-column="29" />
+        <state relative-caret-position="352">
+          <caret line="28" column="139" lean-forward="false" selection-start-line="28" selection-start-column="139" selection-end-line="28" selection-end-column="139" />
           <folding>
             <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#li#2;n#ul#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#1770#1777#0" expanded="true" />
+            <element signature="e#1772#1779#0" expanded="true" />
             <element signature="n#style#0;n#div#1;n#form#0;n#div#0;n#li#2;n#ul#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#2;n#form#0;n#div#0;n#li#2;n#ul#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#button#0;n#div#2;n#form#0;n#div#0;n#li#2;n#ul#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -1055,14 +1065,6 @@
             <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#button#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cssheets/login.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="80" column="6" lean-forward="false" selection-start-line="80" selection-start-column="1" selection-end-line="80" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
