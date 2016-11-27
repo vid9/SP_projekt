@@ -3,13 +3,14 @@
     color: #f44336;
     background-color: #f1f1f1;
     padding:40px 25px 40px 25px;
-    margin: 15px;
-    margin-top: 14%;
+    /*margin: 15px;*/
+    margin-top: 8%;
 }
 
 .form {
     margin-top:24px;
     margin-bottom:24px;
+    margin-left: 31%;
 }
 
 .skrij {
@@ -20,11 +21,11 @@
     padding:10px;
     display:block;
     border: 1px solid #808080;
-    width:100%
+    width:50%
 }
-.podatki:not(:valid)~.w3-validate{
+.podatki:not(:valid){
+    border: 1px solid black;
     color:#f44336;
-    opacity: 0.5
 }
 
 .gumb {
@@ -84,12 +85,6 @@
     color: #000;
     font-size: 40px;
     font-weight: bold;
-}
-
-.cancelbtn {
-    width: auto;
-    padding: 10px 18px;
-    background-color: #f44336;
 }
 
 /* Add Zoom Animation */

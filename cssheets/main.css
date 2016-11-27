@@ -311,9 +311,26 @@ header{
 }
 
 .thumb {
-    height: 75px;
+    height: 100px;
+    width: 100px;
     border: 1px solid #000;
     margin: 10px 5px 0 0;
+}
+
+.izracun {
+    background-color: lightgray;
+    color: black;
+    width: 38%;
+    max-width:1080px;
+    margin: 20px 0 20px 0;
+    padding: 20px;
+    float: left;
+}
+
+@media only screen and (max-width:420px){
+    .map {
+        display: none;
+    }
 }
 /*Od tukaj naprej je custom*/
 

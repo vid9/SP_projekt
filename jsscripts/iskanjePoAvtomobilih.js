@@ -4,7 +4,6 @@
 
 //Adds listeners to selection and disables second and third selection
 function start(){
-    document.getElementById('capture').addEventListener('change', handleFileSelect, false);
     document.getElementById("Serija").addEventListener("change", enableModel, false);
     document.getElementById("Znamka").addEventListener("change", enableSerija, false);
     document.getElementById("Model").disabled = true;
@@ -165,20 +164,34 @@ function removeOptions(selectbox)
     }
 }
 
-function handleFileSelect(evt) {
-    var files = evt.target.files; // FileList object
-    var reader = new FileReader();
-    f = files[0];
-    reader.onload = (function(theFile) {
-        return function(e) {
-            // add thumbnail.
-            var img = document.getElementById('output');
-            img.src = e.target.result;
-        };
-    })(f);
 
-    // Read in the image file as a data URL.
-    reader.readAsDataURL(f);
+function tabela() {
+    document.getElementById('rezultatIskanja').style.display = "block";
+    if (document.getElementById("Serija").selectedIndex != 0 &&  document.getElementById("Znamka").selectedIndex != 0 && document.getElementById("Znamka").selectedIndex != 0) {
+        var znamka = document.getElementById('Znamka').value
+        if(znamka == "audi") {
+            document.getElementById("v").textContent = "1484 mm";
+            document.getElementById("d").textContent = "3562 mm";
+            document.getElementById("t").textContent = "Dizel";
+            document.getElementById("vr").textContent = "67.5l";
+            document.getElementById("p").textContent = "6.4 l na 100 km";
+        }
+        else if(znamka == "bmw") {
+            document.getElementById("v").textContent = "1285 mm";
+            document.getElementById("d").textContent = "3673 mm";
+            document.getElementById("t").textContent = "Bencin 95";
+            document.getElementById("vr").textContent = "60 l";
+            document.getElementById("p").textContent = "5.3 l na 100 km";
+        }
+        else if(znamka == "volvo") {
+            document.getElementById("v").textContent = "1524 mm";
+            document.getElementById("d").textContent = "3732 mm";
+            document.getElementById("t").textContent = "Bencin 98";
+            document.getElementById("vr").textContent = "70 l";
+            document.getElementById("p").textContent = "7.1 l na 100 km";
+        }
+    } else {
+        window.alert("Napačna izbira avtomobila!")
+    }
 }
-
 

@@ -1,12 +1,23 @@
 /**
  * Created by vidce on 13. 11. 2016.
  */
-function add(form) { /*function to add user into system
-    /*the following adds user info into page system*/
-    if(form.userid.value != "") {
-        window.location.href = "index.html";/*reopens main page where new user can login now*/
-    }
-    else {
-        alert("Error! User could not be created.")/*displays error message*/
-    }
+
+function start(){
+    document.getElementById('capture').addEventListener('change', handleFileSelect, false);
+}
+
+function handleFileSelect(evt) {
+    var files = evt.target.files; // FileList object
+    var reader = new FileReader();
+    f = files[0];
+    reader.onload = (function(theFile) {
+        return function(e) {
+            // add thumbnail.
+            var img = document.getElementById('output');
+            img.src = e.target.result;
+        };
+    })(f);
+
+    // Read in the image file as a data URL.
+    reader.readAsDataURL(f);
 }

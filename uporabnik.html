@@ -28,8 +28,9 @@
 <!-- Navbar -->
 <div style="position:fixed;width:100%;z-index:1;top:0">
     <ul class="topnav" id="navigation">
-        <li><a href="index.html">DOMOV</a></li>
+        <li><a href="indexloged.html">DOMOV</a></li>
         <li><a href="uporabnik.html">ISKANJE AVTOMOBILOV</a></li>
+        <li><a href="uporabnik.html">DODAJ AVTOMOBIL</a></li>
         <li style="float: right;"><a href="profil.html">PROFIL</a></li>
         <li class="icon">
             <a href="javascript:void(0);" onclick="smallBar()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
@@ -46,16 +47,12 @@
         </select>
         <select id="Serija" class="quarter options-mid" name="option">
             <option value="" disabled selected>Serija</option>
-            <option value="volvo">S60</option>
         </select>
         <select id="Model" class="options-right quarter" name="option">
             <option value="" disabled selected>Model</option>
-            <option value="volvo">T5 FWD</option>
         </select>
         <button class="gumb" onclick="loadCar()"> Išči </button>
     </div>
-    <p>Capture Image: <input type="file" accept="image/*" id="capture" capture="camera">
-        <img id="output" class="thumb">
 </div>
 <div class="komentarji-content">
 
