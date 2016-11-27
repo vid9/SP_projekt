@@ -246,6 +246,9 @@ header{
     .options-right{
         margin: 25px 0 auto auto;
     }
+    .izracun {
+        width: 80%!important;
+    }
 }
 
 .img-iskanje{
@@ -305,9 +308,12 @@ header{
     border-bottom:2px solid #009688;
 }
 
-.komentarji-content {
-
-    
+div.komentarji {
+    background-color: darkgrey;
+    color: black;
+    margin: 20px 0 20px 0;
+    padding: 20px;
+    display: none;
 }
 
 .thumb {
@@ -332,18 +338,18 @@ header{
         display: none;
     }
 }
-/*Od tukaj naprej je custom*/
 
+body,h1,h2,h3,h4,h5,h6 {
+    font-family: "Lato", sans-serif
+}
+.topnav ,h1,button {
+    font-family: "Montserrat", sans-serif
+}
 
 footer {
-    clear:both;
+    color: darkgray;
+    text-align: center;
 }
-
-.main {
-    min-height:1000px;
-    background:#E8E8E8;
-}
-
 
 
 

@@ -1,55 +1,46 @@
 <!DOCTYPE html>
 <html>
-<link rel="stylesheet" href="cssheets/main.css">
-<link rel="stylesheet" href="cssheets/login.css">
-<link rel="stylesheet" href="cssheets/maps.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-body,h1,h2,h3,h4,h5,h6 {
- font-family: "Lato", sans-serif
-}
-.topnav ,h1,button {
- font-family: "Montserrat", sans-serif
-}
-</style>
 <head>
-<title>Poraba - mi skrbimo za vas</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="jsscripts/login.js"></script>
+    <script src="jsscripts/map.js"></script>
+    <script src="jsscripts/navSmall.js"></script>
+    <script src="jsscripts/iskanjePoAvtomobilih.js"></script>
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBZ4J1umOcxjyardgnt_4QYIrM-rn629JM&libraries=geometry,places&sensor=false" async defer></script>
+    <link rel="stylesheet" href="cssheets/main.css">
+    <link rel="stylesheet" href="cssheets/login.css">
+    <link rel="stylesheet" href="cssheets/maps.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <title>Poraba - mi skrbimo za vas</title>
 </head>
-<script src="jsscripts/login.js"></script>
-<script src="jsscripts/map.js"></script>
-<script src="jsscripts/navSmall.js"></script>
-<script src="jsscripts/iskanjePoAvtomobilih.js"></script>
-<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBZ4J1umOcxjyardgnt_4QYIrM-rn629JM&libraries=geometry,places&sensor=false" async defer></script>
 <body style="margin: auto" onload="initMap()">
 <!-- Navbar -->
     <div style="position:fixed;width:100%;z-index:1;top:0">
         <ul class="topnav" id="navigation">
             <li><a href="index.html">DOMOV</a></li>
             <li><a href="registration.html">REGISTRACIJA</a></li>
-            <li style="float: right;" onclick="document.getElementById('login').style.display='block'"><a href="#">PRIJAVA</a></li>
+            <li style="float: right;" onclick="document.getElementById('login').style.display='block'"><a href="#">PRIJAVA</a>
             <div id="login" class="login-popup">
-                <form class="login-content animate">
+                <form class="login-content animate" action="indexloged.html">
                     <div class="imgcontainer">
                         <span onclick="document.getElementById('login').style.display='none'" class="close" title="Zapri">&times;</span>
                     </div>
                     <div style="padding: 20px;">
                         <label><b>Uporabniško ime</b></label>
-                        <input class="login-text" type="text" placeholder="Uporabniško ime" name="uname" required="true">
+                        <input class="login-text" type="text" placeholder="Uporabniško ime" name="uname" required=required>
                         <label><b>Geslo</b></label>
-                        <input class="login-password" type="password" placeholder="Geslo" name="psw" required="true">
-                        <button type="submit" class="gumb" style="margin-left: 38%" ><a href="indexloged.html">Prijava</a></button>
-                        <input type="checkbox" checked="checked"> Zapomni si me
+                        <input class="login-password" type="password" placeholder="Geslo" name="psw" required=required>
+                        <button class="gumb mid" >Prijava</button>
+                        <label class="mid"><input type="checkbox" checked="checked">Zapomni</label>
                     </div>
-                    <div style="padding: 20px;" style="background-color:#f1f1f1">
-                        <button type="button" onclick="document.getElementById('login').style.display='none'" class="gumb" style="background-color: #f1f1f1;margin-left: 38%">Prekliči</button>
-                        <span class="psw">Pozabil <a href="#">geslo?</a></span>
+                    <div  style="background-color:#f1f1f1; padding: 20px;">
+                        <button type="button" onclick="document.getElementById('login').style.display='none'" class="gumb mid" style="background-color: #f1f1f1">Prekliči</button>
                     </div>
                 </form>
-            </div>
+            </div></li>
             <li class="icon">
                 <a href="javascript:void(0);" onclick="smallBar()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
             </li>
@@ -82,29 +73,30 @@ body,h1,h2,h3,h4,h5,h6 {
         <img class="third" style="float:right;margin-top: 55px" src="assets/kamion.jpg" alt="avto"/>
         <h5 style="padding:0px 0px 0px 100px;float:left;font-size:32px">Podatki o avtomobilu</h5>
         <table id="vrednosti" class="table striped half">
-          <tr>
-            <th id = "spec" style="font-size:18px">Specifikacije</th>
-            <th id = "val" style="font-size:18px">Vrednost</th>
-          </tr>
-          <tr>
-            <td>Višina</td>
-            <td id="v"></td>
-        </tr>
-        <tr>
-            <td>Dolžina</td>
-            <td id="d"></td>
-        </tr>
-        <tr>
-            <td>Tip goriva</td>
-            <td id="t"></td>
-        </tr>
-        <tr>
-            <td>Velikost rezervoarja</td>
-            <td id="vr"></td>
-        </tr>
+            <tr>
+                <th id = "spec" style="font-size:18px">Specifikacije</th>
+                <th id = "val" style="font-size:18px">Vrednost</th>
+            </tr>
+            <tr>
+                <td>Višina</td>
+                <td id="v"></td>
+            </tr>
+            <tr>
+                <td>Dolžina</td>
+                <td id="d"></td>
+            </tr>
+            <tr>
+                <td>Tip goriva</td>
+                <td id="t"></td>
+            </tr>
+            <tr>
+                <td>Velikost rezervoarja</td>
+                <td id="vr"></td>
+            </tr>
+            <tr>
             <td>Povprečna poraba</td>
             <td id="p"></td>
-        </tr>
+            </tr>
         </table>
         </div>
       </div>
@@ -129,7 +121,8 @@ body,h1,h2,h3,h4,h5,h6 {
             <button class="gumb row but" style="float: left;" onclick="calculateAndDisplayRoute()">Izračunaj</button>
         </div>
     </div>
-    <footer>
-    </footer>
-  </body >
+</body >
+<footer>
+    <p>COPYRIGHT © 2016, VID ČERMELJ, ALL RIGHTS RESERVED.</p>
+</footer>
 </html>

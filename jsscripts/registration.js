@@ -1,6 +1,9 @@
 /**
  * Created by vidce on 13. 11. 2016.
  */
+function profil() {
+    window.location.href = "profil.html";
+}
 
 function start(){
     document.getElementById('capture').addEventListener('change', handleFileSelect, false);

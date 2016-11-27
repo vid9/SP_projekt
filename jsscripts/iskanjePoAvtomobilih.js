@@ -167,6 +167,9 @@ function removeOptions(selectbox)
 
 function tabela() {
     document.getElementById('rezultatIskanja').style.display = "block";
+    document.getElementById('c1').style.display = "block";
+    document.getElementById('c2').style.display = "block";
+    document.getElementById('c3').style.display = "block";
     if (document.getElementById("Serija").selectedIndex != 0 &&  document.getElementById("Znamka").selectedIndex != 0 && document.getElementById("Znamka").selectedIndex != 0) {
         var znamka = document.getElementById('Znamka').value
         if(znamka == "audi") {

@@ -109,7 +109,25 @@
         display: block;
         float: none;
     }
-    .cancelbtn {
-        width: 100%;
+}
+@media only screen and (max-width:600px){
+    .form {
+        width: 90%!important;
+        margin-left: 15%!important;
+    }
+    .podatki {
+        width: 60%!important;
+    }
+}
+
+.mid {
+    margin-left: 38%;
+    margin-right: 37%;
+}
+
+@media only screen and (max-width:760px){
+    .mid {
+        margin-left: 30%;
+        margin-right: 30%;
     }
 }

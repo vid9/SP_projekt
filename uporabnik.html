@@ -1,36 +1,26 @@
 <!DOCTYPE html>
 <html>
-
-<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
-
-<link rel="stylesheet" href="cssheets/main.css">
-<link rel="stylesheet" href="cssheets/login.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><style>
-    body,h1,h2,h3,h4,h5,h6 {
-        font-family: "Lato", sans-serif
-    }
-    .topnav ,h1,button {
-        font-family: "Montserrat", sans-serif
-    }
-</style>
 <head>
+    <link rel="stylesheet" href="cssheets/main.css">
+    <link rel="stylesheet" href="cssheets/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Poraba - mi skrbimo za vas</title>
+    <script src="jsscripts/login.js"></script>
+    <script src="jsscripts/redirect.js"></script>
+    <script src="jsscripts/navSmall.js"></script>
+    <script src="jsscripts/iskanjePoAvtomobilih.js"></script>
 </head>
-<script src="jsscripts/login.js"></script>
-<script src="jsscripts/redirect.js"></script>
-<script src="jsscripts/navSmall.js"></script>
-<script src="jsscripts/iskanjePoAvtomobilih.js"></script>
 <body style="margin: auto" onload="start()">
 <!-- Navbar -->
 <div style="position:fixed;width:100%;z-index:1;top:0">
     <ul class="topnav" id="navigation">
         <li><a href="indexloged.html">DOMOV</a></li>
         <li><a href="uporabnik.html">ISKANJE AVTOMOBILOV</a></li>
-        <li><a href="uporabnik.html">DODAJ AVTOMOBIL</a></li>
+        <li><a href="dodaj.html">DODAJ AVTOMOBIL</a></li>
         <li style="float: right;"><a href="profil.html">PROFIL</a></li>
         <li class="icon">
             <a href="javascript:void(0);" onclick="smallBar()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
@@ -51,12 +41,55 @@
         <select id="Model" class="options-right quarter" name="option">
             <option value="" disabled selected>Model</option>
         </select>
-        <button class="gumb" onclick="loadCar()"> Išči </button>
+        <button class="gumb" onclick="tabela()"> Išči </button>
+        <div id = "rezultatIskanja" style="display: none">
+            <img class="third" style="float:right;margin-top: 55px" src="assets/kamion.jpg" alt="avto"/>
+            <h5 style="padding:0px 0px 0px 100px;float:left;font-size:32px">Podatki o avtomobilu</h5>
+            <table id="vrednosti" class="table striped half">
+                <tr>
+                    <th id = "spec" style="font-size:18px">Specifikacije</th>
+                    <th id = "val" style="font-size:18px">Vrednost</th>
+                </tr>
+                <tr>
+                    <td>Višina</td>
+                    <td id="v"></td>
+                </tr>
+                <tr>
+                    <td>Dolžina</td>
+                    <td id="d"></td>
+                </tr>
+                <tr>
+                    <td>Tip goriva</td>
+                    <td id="t"></td>
+                </tr>
+                <tr>
+                    <td>Velikost rezervoarja</td>
+                    <td id="vr"></td>
+                </tr>
+                <tr>
+                    <td>Povprečna poraba</td>
+                    <td id="p"></td>
+                </tr>
+            </table>
+        </div>
     </div>
 </div>
-<div class="komentarji-content">
-
-
+<div class="content">
+    <div id="c1" class="komentarji">
+        <h2>Joža</h2>
+        <p>To je komentar, ta komentar je napisal uporabnik Joža.</p>
+    </div>
+    <div id="c2" class="komentarji">
+        <h2>Janez</h2>
+        <p>To je komentar, ta komentar je napisal uporabnik Janez.</p>
+    </div>
+    <div id="c3" class="komentarji">
+        <h2>hasan</h2>
+        <p>To je komentar, ta komentar je napisal uporabnik hasan.</p>
+    </div>
 </div>
 </body>
+<footer>
+    <p>COPYRIGHT © 2016, VID ČERMELJ, ALL RIGHTS RESERVED.</p>
+</footer>
 </html>

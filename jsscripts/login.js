@@ -1,6 +1,10 @@
 /**
  * Created by vidce on 13. 11. 2016.
  */
+function go() {
+    window.location.href = "index.html";
+}
+
 
 function check(form) { /*function to check userid & password*/
     /*the following code checkes whether the entered userid and password are matching*/

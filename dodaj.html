@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="cssheets/main.css">
+    <link rel="stylesheet" href="cssheets/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="jsscripts/login.js"></script>
+    <script src="jsscripts/registration.js"></script>
+    <script src="jsscripts/navSmall.js"></script>
+    <script src="jsscripts/redirect.js"></script>
+    <title>Poraba - mi skrbimo za vas</title>
+</head>
+<body style="margin: auto" onload="start()">
+<!-- Navbar -->
+<div style="position:fixed;width:100%;z-index:1;top:0">
+    <ul class="topnav" id="navigation">
+        <li><a href="indexloged.html">DOMOV</a></li>
+        <li><a href="uporabnik.html">ISKANJE AVTOMOBILOV</a></li>
+        <li><a href="uporabnik.html">DODAJ AVTOMOBIL</a></li>
+        <li style="float: right;"><a href="profil.html">PROFIL</a></li>
+        <li class="icon">
+            <a href="javascript:void(0);" onclick="smallBar()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+        </li>
+    </ul>
+</div>
+<form class="container login">
+    <h2 style="text-align: center; font-size: 30px; color: black">Prosimo vnesite podatke</h2>
+    <div class="row form">
+        <div class="col" style="width:50px; font-size:35px"><i class="fa fa-circle"></i></div>
+        <div class="skrij">
+            <input class="podatki" name="first" id="znamka" type="text" placeholder="Znamka avtomobila" required=required>
+        </div>
+    </div>
+    <div class="row form">
+        <div class="col" style="width:50px; font-size:35px"><i class="fa fa-circle"></i></div>
+        <div class="skrij">
+            <input class="podatki" name="last" id="serija" type="text" placeholder="Serija avtomobila" required=required>
+        </div>
+    </div>
+    <div class="row form">
+        <div class="col" style="width:50px; font-size:35px"><i class="fa fa-circle"></i></div>
+        <div class="skrij">
+            <input class="podatki" name="last" id="model" type="text" placeholder="Model avtomobila" required=required>
+        </div>
+    </div>
+    <div class="row form">
+        <div class="col" style="width:50px; font-size:35px"><i class="fa fa-circle"></i></div>
+        <div class="skrij">
+            <input class="podatki" name="last" id="višina" type="number" placeholder="Višina avtomobila (mm)" required=required>
+        </div>
+    </div>
+    <div class="row form">
+        <div class="col" style="width:50px; font-size:35px"><i class="fa fa-circle"></i></div>
+        <div class="skrij">
+            <input class="podatki" name="last" id="dolžina" type="number" placeholder="Dolžina avtomobila" required=required>
+        </div>
+    </div>
+    <div class="row form">
+        <div class="col" style="width:50px; font-size:35px"><i class="fa fa-circle"></i></i></div>
+        <div class="skrij">
+            <input class="podatki" name="last" id="tip" type="text" placeholder="Tip goriva" required=required>
+        </div>
+    </div>
+    <div class="row form">
+        <div class="col" style="width:50px; font-size:35px"><i class="fa fa-circle"></i></i></div>
+        <div class="skrij">
+            <input class="podatki" name="last" id="rezervoar" type="text" placeholder="Velikost rezervoarja" required=required>
+        </div>
+    </div>
+    <div class="row form">
+        <div class="col" style="width:50px; font-size:35px"><i class="fa fa-circle"></i></i></div>
+        <div class="skrij">
+            <input class="podatki" name="last" id="poraba" type="text" placeholder="Povprečna poraba" required=required>
+        </div>
+    </div>
+    <div class="row form">
+        <div class="col" style="width:50px; font-size:35px"><i class="fa fa-photo"></i></div>
+        <div class="skrij">
+            <input type="file" accept="image/*" id="capture" required=required style="float: left;margin-top: 15px" data-capture="camera"><img src="/assets/no_image.png" id="output" alt="No image" class="thumb">
+        </div>
+    </div>
+    <button type="submit" class="gumb" style="margin-left: 47%" onclick="profil()">Pošlji</button>
+</form>
+</body>
+</html>

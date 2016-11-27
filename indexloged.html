@@ -1,44 +1,37 @@
 <!DOCTYPE html>
 <html>
-<link rel="stylesheet" href="cssheets/main.css">
-<link rel="stylesheet" href="cssheets/login.css">
-<link rel="stylesheet" href="cssheets/maps.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-    body,h1,h2,h3,h4,h5,h6 {
-        font-family: "Lato", sans-serif
-    }
-    .topnav ,h1,button {
-        font-family: "Montserrat", sans-serif
-    }
-</style>
 <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="jsscripts/login.js"></script>
+    <script src="jsscripts/map.js"></script>
+    <script src="jsscripts/navSmall.js"></script>
+    <script src="jsscripts/iskanjePoAvtomobilih.js"></script>
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBZ4J1umOcxjyardgnt_4QYIrM-rn629JM&libraries=geometry,places&sensor=false" async defer></script>
+    <link rel="stylesheet" href="cssheets/main.css">
+    <link rel="stylesheet" href="cssheets/login.css">
+    <link rel="stylesheet" href="cssheets/maps.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
     <title>Poraba - mi skrbimo za vas</title>
 </head>
-<script src="jsscripts/login.js"></script>
-<script src="jsscripts/map.js"></script>
-<script src="jsscripts/navSmall.js"></script>
-<script src="jsscripts/iskanjePoAvtomobilih.js"></script>
-<body style="margin: auto" onload="start()">
+<body style="margin: auto" onload="initMap()">
 <!-- Navbar -->
-<div style="position:fixed;width:100%;z-index:1;top:0">
-    <ul class="topnav" id="navigation">
-        <li><a href="index.html">DOMOV</a></li>
-        <li><a href="uporabnik.html">ISKANJE AVTOMOBILOV</a></li>
-        <li><a href="uporabnik.html">DODAJ AVTOMOBIL</a></li>
-        <li style="float: right;"><a href="profil.html">PROFIL</a></li>
-        <li class="icon">
-            <a href="javascript:void(0);" onclick="smallBar()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-        </li>
-    </ul>
-</div>
+    <div style="position:fixed;width:100%;z-index:1;top:0">
+        <ul class="topnav" id="navigation">
+            <li><a href="index.html">DOMOV</a></li>
+            <li><a href="uporabnik.html">ISKANJE AVTOMOBILOV</a></li>
+            <li><a href="dodaj.html">DODAJ AVTOMOBIL</a></li>
+            <li style="float: right;"><a href="profil.html">PROFIL</a></li>
+            <li class="icon">
+                <a href="javascript:void(0);" onclick="smallBar()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+            </li>
+        </ul>
+    </div>
 <header>
     <h1 style="font-size:48px;margin:16px">DOBRODOŠLI</h1>
-    <p style="font-size:24px">Naj bodo vaše poti vedno skrbno načrtovane</p>
+    <p style="font-size:24px">Naj bodo vaše poti vedno skrbno načrtovane!</p>
 </header>
 <!-- Iskanje po avtomobilih -->
 <div class="first-grid row-padding container">
@@ -57,42 +50,45 @@
             <select id="Model" class="options-right quarter" name="option">
                 <option value="" disabled selected>Model</option>
             </select>
-            <button class="gumb" onclick="loadCar()"> Išči </button>
+            <button class="gumb" onclick="tabela()"> Išči </button>
         </div>
-        <img class="third" style="float:right;margin-top: 55px" src="assets/kamion.jpg" alt="avto"/>
-        <h5 style="padding:0px 0px 0px 100px;float:left;font-size:32px">Podatki o avtomobilu</h5>
-        <table class="table striped half">
-            <tr>
-                <th style="font-size:18px">Specifikacije</th>
-                <th style="font-size:18px">Vrednost</th>
-            </tr>
-            <tr>
-                <td>Višina</td>
-                <td>1484 mm</td>
-            </tr>
-            <tr>
-                <td>Dolžina</td>
-                <td>3562 mm</td>
-            </tr>
-            <tr>
-                <td>Tip goriva</td>
-                <td>Dizel</td>
-            </tr>
-            <tr>
-                <td>Velikost rezervoarja</td>
-                <td>67.5 l</td>
-            </tr>
-            <td>Povprečna poraba</td>
-            <td>6,4 l na 100 km</td>
-            </tr>
-        </table>
+        <div id = "rezultatIskanja" style="display: none">
+            <img class="third" style="float:right;margin-top: 55px" src="assets/kamion.jpg" alt="avto"/>
+            <h5 style="padding:0px 0px 0px 100px;float:left;font-size:32px">Podatki o avtomobilu</h5>
+            <table id="vrednosti" class="table striped half">
+                <tr>
+                    <th id = "spec" style="font-size:18px">Specifikacije</th>
+                    <th id = "val" style="font-size:18px">Vrednost</th>
+                </tr>
+                <tr>
+                    <td>Višina</td>
+                    <td id="v"></td>
+                </tr>
+                <tr>
+                    <td>Dolžina</td>
+                    <td id="d"></td>
+                </tr>
+                <tr>
+                    <td>Tip goriva</td>
+                    <td id="t"></td>
+                </tr>
+                <tr>
+                    <td>Velikost rezervoarja</td>
+                    <td id="vr"></td>
+                </tr>
+                <tr>
+                    <td>Povprečna poraba</td>
+                    <td id="p"></td>
+                </tr>
+            </table>
+        </div>
     </div>
 </div>
 <!-- Kalkulator stroskov -->
 <div class="row-padding kalkulator container">
     <div class="content">
         <div class="row-padding">
-            <h1>Kalkulator stroskov</h1>
+            <h1>Kalkulator stroškov</h1>
             <div class="izracun content">
                 <h2 id="dist">Razdalja:</h2>
                 <h2 id="poraba">Poraba:</h2>
@@ -108,7 +104,8 @@
         <button class="gumb row but" style="float: left;" onclick="calculateAndDisplayRoute()">Izračunaj</button>
     </div>
 </div>
+</body >
 <footer>
+    <p>COPYRIGHT © 2016, VID ČERMELJ, ALL RIGHTS RESERVED.</p>
 </footer>
-</body>
 </html>
