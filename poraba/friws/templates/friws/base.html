@@ -1,0 +1,126 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="jsscripts/login.js"></script>
+    <script src="jsscripts/map.js"></script>
+    <script src="jsscripts/navSmall.js"></script>
+    <script src="jsscripts/iskanjePoAvtomobilih.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZ4J1umOcxjyardgnt_4QYIrM-rn629JM&libraries=geometry,places&sensor=false" async defer></script>
+    <link rel="stylesheet" href="{% static 'friws/style.css' %}">
+    <link rel="stylesheet" href="{% static 'friws/login.css' %}">
+    <link rel="stylesheet" href="{% static 'friws/maps.css' %}">
+    <title>Poraba - mi skrbimo za vas</title>
+</head>
+<body style="margin: auto" onload="initMap()">
+<!-- Navbar -->
+    <div style="position:fixed;width:100%;z-index:1;top:0">
+        <ul class="topnav" id="navigation">
+            <li><a href="index.html">DOMOV</a></li>
+            <li><a href="registration.html">REGISTRACIJA</a></li>
+            <li style="float: right;" onclick="document.getElementById('login').style.display='block'"><a href="#">PRIJAVA</a>
+            <div id="login" class="login-popup">
+                <form class="login-content animate" action="indexloged.html">
+                    <div class="imgcontainer">
+                        <button onclick="document.getElementById('login').style.display='none'" class="close" title="Zapri">&times;</button>
+                    </div>
+                    <div style="padding: 20px;">
+                        <label><b>Uporabniško ime</b></label>
+                        <input class="login-text" type="text" placeholder="Uporabniško ime" name="uname" required=required>
+                        <label><b>Geslo</b></label>
+                        <input class="login-password" type="password" placeholder="Geslo" name="psw" required=required>
+                        <button class="gumb mid" >Prijava</button>
+                        <label class="mid"><input type="checkbox" checked="checked">Zapomni</label>
+                    </div>
+                    <div  style="background-color:#f1f1f1; padding: 20px;">
+                        <button type="button" onclick="document.getElementById('login').style.display='none'" class="gumb mid" style="background-color: #f1f1f1">Prekliči</button>
+                    </div>
+                </form>
+            </div></li>
+            <li class="icon">
+                <a href="javascript:void(0);" onclick="smallBar()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+            </li>
+        </ul>
+    </div>
+    <header>
+      <h1 style="font-size:48px;margin:16px">DOBRODOŠLI</h1>
+      <p style="font-size:24px">Naj bodo vaše poti vedno skrbno načrtovane!</p>
+    </header>
+<!-- Iskanje po avtomobilih -->
+<div class="first-grid row-padding container">
+    <div class="content">
+        <h1 style="text-align:center;padding:12px 24px">Išči po avtomobilih</h1>
+        <div id="rezultat" class="content" style="margin-top: 50px">
+            <select id="Znamka" class="quarter options-left" autofocus>
+                <option value="" disabled selected>Izberi znamko avtomobila</option>
+                <option value="audi">Audi</option>
+                <option value="bmw">Opel</option>
+                <option value="volvo">Volvo</option>
+            </select>
+            <select id="Serija" class="quarter options-mid" name="option">
+                <option value="" disabled selected>Serija</option>
+            </select>
+            <select id="Model" class="options-right quarter" name="option">
+                <option value="" disabled selected>Model</option>
+            </select>
+            <button class="gumb" onclick="tabela()"> Išči </button>
+        </div>
+        <div id = "rezultatIskanja" style="display: none">
+        <img class="third" style="float:right;margin-top: 55px" src="assets/kamion.jpg" alt="avto"/>
+        <h5 style="padding:0px 0px 0px 100px;float:left;font-size:32px">Podatki o avtomobilu</h5>
+        <table id="vrednosti" class="table striped half">
+            <tr>
+                <th id = "spec" style="font-size:18px">Specifikacije</th>
+                <th id = "val" style="font-size:18px">Vrednost</th>
+            </tr>
+            <tr>
+                <td>Višina</td>
+                <td id="v"></td>
+            </tr>
+            <tr>
+                <td>Dolžina</td>
+                <td id="d"></td>
+            </tr>
+            <tr>
+                <td>Tip goriva</td>
+                <td id="t"></td>
+            </tr>
+            <tr>
+                <td>Velikost rezervoarja</td>
+                <td id="vr"></td>
+            </tr>
+            <tr>
+            <td>Povprečna poraba</td>
+            <td id="p"></td>
+            </tr>
+        </table>
+        </div>
+      </div>
+    </div>
+<!-- Kalkulator stroskov -->
+    <div class="row-padding kalkulator container">
+        <div class="content">
+            <div class="row-padding">
+                <h1>Kalkulator stroškov</h1>
+                <div class="izracun content">
+                    <h2 id="dist">Razdalja:</h2>
+                    <h2 id="poraba">Poraba:</h2>
+                </div>
+                <div style="margin-right: 50%">
+                <input id="origin-input" class="controls" type="text"
+                       placeholder="Vpiši začetno lokacijo">
+                <input id="destination-input" class="controls" type="text"
+                       placeholder="Vpiši končno lokacijo">
+                </div>
+                <div id="map" class="row third map" style="float:left;"></div>
+            </div>
+            <button class="gumb row but" style="float: left;" onclick="calculateAndDisplayRoute()">Izračunaj</button>
+        </div>
+    </div>
+<footer>
+    <p>COPYRIGHT © 2016, VID ČERMELJ, ALL RIGHTS RESERVED.</p>
+</footer>
+</body>
+</html>
