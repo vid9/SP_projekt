@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="cssheets/main.css">
+    <link rel="stylesheet" href="cssheets/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Poraba - mi skrbimo za vas</title>
+    <script src="jsscripts/login.js"></script>
+    <script src="jsscripts/redirect.js"></script>
+    <script src="jsscripts/navSmall.js"></script>
+    <script src="jsscripts/iskanjePoAvtomobilih.js"></script>
+</head>
+<body style="margin: auto" onload="start()">
+<!-- Navbar -->
+<div style="position:fixed;width:100%;z-index:1;top:0">
+    <ul class="topnav" id="navigation">
+        <li><a href="indexloged.html">DOMOV</a></li>
+        <li><a href="uporabnik.html">ISKANJE AVTOMOBILOV</a></li>
+        <li><a href="dodaj.html">DODAJ AVTOMOBIL</a></li>
+        <li style="float: right;"><a href="profil.html">PROFIL</a></li>
+        <li class="icon">
+            <a href="javascript:void(0);" onclick="smallBar()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+        </li>
+    </ul>
+</div>
+<div class="first-grid row-padding container">
+    <div id="rezultat" class="content" style="margin-top: 50px">
+        <select id="Znamka" class="quarter options-left" autofocus>
+            <option value="" disabled selected>Izberi znamko avtomobila</option>
+            <option value="audi">Audi</option>
+            <option value="bmw">Opel</option>
+            <option value="volvo">Volvo</option>
+        </select>
+        <select id="Serija" class="quarter options-mid" name="option">
+            <option value="" disabled selected>Serija</option>
+        </select>
+        <select id="Model" class="options-right quarter" name="option">
+            <option value="" disabled selected>Model</option>
+        </select>
+        <button class="gumb" onclick="tabela()"> Išči </button>
+        <div id = "rezultatIskanja" style="display: none">
+            <img class="third" style="float:right;margin-top: 55px" src="assets/kamion.jpg" alt="avto"/>
+            <h5 style="padding:0px 0px 0px 100px;float:left;font-size:32px">Podatki o avtomobilu</h5>
+            <table id="vrednosti" class="table striped half">
+                <tr>
+                    <th id = "spec" style="font-size:18px">Specifikacije</th>
+                    <th id = "val" style="font-size:18px">Vrednost</th>
+                </tr>
+                <tr>
+                    <td>Višina</td>
+                    <td id="v"></td>
+                </tr>
+                <tr>
+                    <td>Dolžina</td>
+                    <td id="d"></td>
+                </tr>
+                <tr>
+                    <td>Tip goriva</td>
+                    <td id="t"></td>
+                </tr>
+                <tr>
+                    <td>Velikost rezervoarja</td>
+                    <td id="vr"></td>
+                </tr>
+                <tr>
+                    <td>Povprečna poraba</td>
+                    <td id="p"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<div id="section" class="content">
+    <form>
+        <div id="com" style="display: none">
+        <textarea name="comments" id="comments" class="kom-box">Komentiraj!</textarea>
+        </div>
+        <input id="but1" type="button" value="Komentiraj"  class="gumb" style="display: none" onclick="komentar()">
+    </form>
+    <div id="c1" class="komentarji">
+        <h2>Joža</h2>
+        <p>To je komentar, ta komentar je napisal uporabnik Joža.</p>
+    </div>
+    <div id="c2" class="komentarji">
+        <h2>Janez</h2>
+        <p>To je komentar, ta komentar je napisal uporabnik Janez.</p>
+    </div>
+    <div id="c3" class="komentarji">
+        <h2>hasan</h2>
+        <p>To je komentar, ta komentar je napisal uporabnik hasan.</p>
+    </div>
+</div>
+<footer>
+    <p>COPYRIGHT © 2016, VID ČERMELJ, ALL RIGHTS RESERVED.</p>
+</footer>
+</body>
+</html>

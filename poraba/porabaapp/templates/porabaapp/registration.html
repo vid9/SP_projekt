@@ -1,0 +1,87 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{% static 'porabaapp/main.css' %}">
+    <link rel="stylesheet" href="{% static 'porabaapp/login.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="jsscripts/login.js"></script>
+    <script src="jsscripts/registration.js"></script>
+    <script src="jsscripts/navSmall.js"></script>
+    <script src="jsscripts/redirect.js"></script>
+    <title>Poraba - mi skrbimo za vas</title>
+</head>
+<body style="margin: auto" onload="start()">
+    <!-- Navbar -->
+    <div style="position:fixed;width:100%;z-index:1;top:0">
+        <ul class="topnav" id="navigation">
+            <li><a href="index.html">DOMOV</a></li>
+            <li><a href="registration.html">REGISTRACIJA</a></li>
+            <li style="float: right;" onclick="document.getElementById('login').style.display='block'"><a href="#">PRIJAVA</a>
+            <div id="login" class="login-popup">
+                <form class="login-content animate" action="indexloged.html">
+                    <div class="imgcontainer">
+                        <span onclick="document.getElementById('login').style.display='none'" class="close" title="Zapri">&times;</span>
+                    </div>
+                    <div style="padding: 20px;">
+                        <label><b>Uporabniško ime</b></label>
+                        <input class="login-text" type="text" placeholder="Uporabniško ime" name="uname" required=required>
+                        <label><b>Geslo</b></label>
+                        <input class="login-password" type="password" placeholder="Geslo" name="psw" required=required>
+                        <button class="gumb" style="margin-left: 38%">Prijava</button>
+                        <input type="checkbox" checked="checked"> Zapomni si me
+                    </div>
+                    <div  style="background-color:#f1f1f1; padding: 20px;">
+                        <button type="button" onclick="document.getElementById('login').style.display='none'" class="gumb" style="background-color: #f1f1f1;margin-left: 38%">Prekliči</button>
+                    </div>
+                </form>
+            </div></li>
+            <li class="icon">
+                <a href="javascript:void(0);" onclick="smallBar()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+            </li>
+        </ul>
+    </div>
+
+    <form class="container login">
+        <h2 style="text-align: center; font-size: 30px; color: black">Prosimo vnesite podatke</h2>
+        <div class="row form">
+            <div class="col" style="width:50px; font-size:35px"><i class="fa fa-user"></i></div>
+            <div class="skrij">
+                <input class="podatki" name="first" id="ime" type="text" placeholder="Ime" required=required>
+            </div>
+        </div>
+        <div class="row form">
+            <div class="col" style="width:50px; font-size:35px"><i class="fa fa-user"></i></div>
+            <div class="skrij">
+                <input class="podatki" name="last" id="priimek" type="text" placeholder="Priimek" required=required>
+            </div>
+        </div>
+        <div class="row form">
+            <div class="col" style="width:50px; font-size:35px"><i class="fa fa-envelope-o"></i></div>
+            <div class="skrij">
+                <input  class="podatki" name="email" id="email" type="email" placeholder="Email" required=required>
+            </div>
+        </div>
+        <div class="row form">
+            <div class="col" style="width:50px; font-size:35px"><i class="fa fa-phone"></i></div>
+            <div class="skrij">
+                <input class="podatki" title = "Telefonska številka: Format: 012 345 678"  name="phone" id="telefon" type="tel" placeholder="Telefon" required=required pattern='\d{3}[\ ]\d{3}[\ ]\d{3}'>
+            </div>
+        </div>
+        <div class="row form">
+            <div class="col" style="width:50px; font-size:35px"><i class="fa fa-photo"></i></div>
+            <div class="skrij">
+                <input type="file" accept="image/*" id="capture" required=required style="float: left;margin-top: 15px" data-capture="camera"><img src="/assets/no_image.png" id="output" alt="No image" class="thumb">
+            </div>
+        </div>
+            <button type="submit" class="gumb" style="margin-left: 47%" onclick="profil()">Pošlji</button>
+    </form>
+    <footer>
+        <p>COPYRIGHT © 2016, VID ČERMELJ, ALL RIGHTS RESERVED.</p>
+    </footer>
+</body>
+</html>

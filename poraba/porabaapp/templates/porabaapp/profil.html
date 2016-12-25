@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="cssheets/main.css">
+    <link rel="stylesheet" href="cssheets/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <script src="jsscripts/login.js"></script>
+    <script src="jsscripts/redirect.js"></script>
+    <script src="jsscripts/navSmall.js"></script>
+    <script src="jsscripts/iskanjePoAvtomobilih.js"></script>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Poraba - mi skrbimo za vas</title>
+</head>
+<body style="margin: auto">
+<!-- Navbar -->
+<div style="position:fixed;width:100%;z-index:1;top:0">
+    <ul class="topnav" id="navigation">
+        <li><a href="indexloged.html">DOMOV</a></li>
+        <li><a href="uporabnik.html">POIŠČI AVTOMOBIL</a></li>
+        <li><a href="dodaj.html">DODAJ AVTOMOBIL</a></li>
+        <li style="float: right;"><a href="#">PROFIL</a></li>
+        <li class="icon">
+            <a href="javascript:void(0);" onclick="smallBar()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+        </li>
+    </ul>
+</div>
+<div class="first-grid row-padding container">
+    <div id="rezultat" class="content" style="margin-top: 50px;margin-bottom: 50px">
+        <h2 style="padding: 10px">Moji avtomobili:</h2>
+        <select size="3" class="options-profil third">
+            <option value="volvo">Volvo A8 super edition</option>
+            <option value="saab">Saab K sport</option>
+            <option value="opel">Opel Astra 2015</option>
+        </select>
+        <img class="third img-iskanje" style="float: right;padding: 0px" src="assets/kamion.jpg" alt="avto"/>
+        <form action="#" style="float: left;margin: 15px">
+            <label style="margin-left: 20px">Poraba:</label> <input type="number" name="poraba" step="0.1" class="podatki" style="margin-left: 20px" value="6.0"><br>
+            <input type="submit" value="Submit" class="gumb" style="margin-left: 20px">
+        </form>
+    </div>
+    <hr>
+    <div id="podatki" class="content" style="margin-top: 100px">
+        <table class="table striped half" style="float: left!important;font-size: 20px; margin-top: 40px">
+            <tr>
+                <th style="font-size:25px">Specifikacije</th>
+                <th style="font-size:25px">Vrednost</th>
+            </tr>
+            <tr>
+                <td>Višina</td>
+                <td>1484 mm</td>
+            </tr>
+            <tr>
+                <td>Dolžina</td>
+                <td>3562 mm</td>
+            </tr>
+            <tr>
+                <td>Tip goriva</td>
+                <td>Dizel</td>
+            </tr>
+            <tr>
+                <td>Velikost rezervoarja</td>
+                <td>67.5 l</td>
+            </tr>
+            <tr>
+                <td>Povprečna poraba</td>
+                <td>6,4 l na 100 km</td>
+            </tr>
+        </table>
+        <img class="third img-iskanje" style="float: right!important;padding: 0px" src="assets/graph.jpg" alt="graf"/>
+    </div>
+    <hr>
+</div>
+<div id="section" class="content" >
+    <form>
+        <div id="com">
+            <textarea name="comments" id="comments" class="kom-box">Komentiraj!</textarea>
+        </div>
+        <input id="but1" type="button" value="Komentiraj"  class="gumb" onclick="komentar()">
+    </form>
+    <div id="c1" class="komentarji" style="display: block!important;">
+        <h2>Joža</h2>
+        <p>To je komentar, ta komentar je napisal uporabnik Joža za uporabnika test.</p>
+    </div>
+    <div id="c2" class="komentarji" style="display: block!important;">
+        <h2>Janez</h2>
+        <p>To je komentar, ta komentar je napisal uporabnik Janez za uporabnika test.</p>
+    </div>
+    <div id="c3" class="komentarji" style="display: block!important;">
+        <h2>hasan</h2>
+        <p>To je komentar, ta komentar je napisal uporabnik hasan za uporabnika test.</p>
+    </div>
+</div>
+<footer>
+    <p>COPYRIGHT © 2016, VID ČERMELJ, ALL RIGHTS RESERVED.</p>
+</footer>
+</body>
+</html>
