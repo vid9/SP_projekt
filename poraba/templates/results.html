@@ -1,0 +1,10 @@
+<div id="refresh">
+<select size="3" id="Model" class="options-right quarter" name="option">
+    <option value="" disabled selected>Izberi avto</option>
+      {% for z in avto  %}
+            <option value="{{ z.model }}">{{ z.model }}</option>
+        {% endfor %}
+
+</select>
+<p>test {{ z.model }}</p>
+</div>

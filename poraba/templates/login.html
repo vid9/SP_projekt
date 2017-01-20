@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block main %}
+    <form method='POST' action='#' class="container login">
+        <h2 style="text-align: center; font-size: 30px; color: black">Prosimo vnesite podatke</h2>
+        {% csrf_token %}
+        <div class="row form">
+            <div class="col" style="width:50px; font-size:35px"><i class="fa fa-user"></i></div>
+            {{ loginForm.username }}
+        </div>
+        <div class="row form">
+            <div class="col" style="width:50px; font-size:35px"><i class="fa fa-user"></i></div>
+            {{ loginForm.password }}
+        </div>
+            <button type="submit" class="gumb" style="margin-left: 47%">Prijava</button>
+    </form>
+{% endblock %}
+

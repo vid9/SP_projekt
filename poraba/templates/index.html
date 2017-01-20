@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block main %}
+    <header onload="index()">
+        <meta name="_csrf" content="${_csrf.token}"/>
+        <meta name="_csrf_header" content="${_csrf.headerName}"/>
+        <h1 style="font-size:48px;margin:16px">DOBRODOŠLI</h1>
+        <p style="font-size:24px">Naj bodo vaše poti vedno skrbno načrtovane!</p>
+    </header>
+    <div class="first-grid row-padding container">
+        <div class="content">
+            <h1 style="text-align:center;padding:12px 24px">Išči po avtomobilih</h1>
+            <div id="rezultat" class="content" style="margin-top: 50px">
+                <select size="3" id="znamka_choose" class="quarter options-left" >
+                <option value="" disabled selected>Izberi znamko</option>
+                    {% for z in znamka  %}
+                        <option value="{{ z.znamka }}">{{ z.znamka }}</option>
+                    {% endfor %}
+                </select>
+            <div id="refresh">
+                    <select size="3" id="Model" class="options-right quarter" name="option">
+                        <option value="" disabled selected>Izberi avto</option>
+                          {% for z in model  %}
+                                <option value="{{ z.model }}">{{ z.model }}</option>
+                            {% endfor %}
+                    </select>
+            </div>
+                 <button class="gumb" onclick="tabela()"> Išči </button>
+            </div>
+            <div id = "rezultatIskanja" style="display: none">
+            <h5 style="padding:0px 0px 0px 100px;float:left;font-size:32px">Podatki o avtomobilu</h5>
+            <table id="vrednosti" class="table striped half">
+                <tr>
+                    <th id = "spec" style="font-size:18px">Specifikacije</th>
+                    <th id = "val" style="font-size:18px">Vrednost</th>
+                </tr>
+                <tr>
+                    <td>Višina</td>
+                    <td id="v"></td>
+                </tr>
+                <tr>
+                    <td>Dolžina</td>
+                    <td id="d"></td>
+                </tr>
+                <tr>
+                    <td>Tip goriva</td>
+                    <td id="t"></td>
+                </tr>
+                <tr>
+                    <td>Velikost rezervoarja</td>
+                    <td id="vr"></td>
+                </tr>
+                <tr>
+                <td>Povprečna poraba</td>
+                <td id="p"></td>
+                </tr>
+            </table>
+            </div>
+        </div>
+    </div>
+    <!-- Kalkulator stroskov -->
+    <div class="row-padding kalkulator container" onload="initMap()">
+        <div class="content">
+            <div class="row-padding">
+                <h1>Kalkulator stroškov</h1>
+                <div class="izracun content">
+                    <h2 id="dist">Razdalja:</h2>
+                    <h2 id="poraba">Poraba:</h2>
+                </div>
+                <div style="margin-right: 50%">
+                <input id="origin-input" class="controls" type="text"
+                       placeholder="Vpiši začetno lokacijo">
+                <input id="destination-input" class="controls" type="text"
+                       placeholder="Vpiši končno lokacijo">
+                </div>
+                <div id="map" class="row third map" style="float:left;"></div>
+            </div>
+            <button class="gumb row but" style="float: left;" onclick="calculateAndDisplayRoute()">Izračunaj</button>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% block main %}
+    <form class="container login" method="POST"> {% csrf_token %}
+        <h2 style="text-align: center; font-size: 30px; color: black">Prosimo vnesite podatke</h2>
+        <div class="row form">
+            <div class="col" style="width:50px; font-size:35px"><i class="fa fa-circle"></i></div>
+            <div class="skrij">
+                {{ specifikacijeForm.znamka }}
+            </div>
+        </div>
+        <div class="row form">
+            <div class="col" style="width:50px; font-size:35px"><i class="fa fa-circle"></i></div>
+            <div class="skrij">
+                {{ specifikacijeForm.model }}
+            </div>
+        </div>
+        <div class="row form">
+            <div class="col" style="width:50px; font-size:35px"><i class="fa fa-circle"></i></div>
+            <div class="skrij">
+                {{ specifikacijeForm.visina }}
+            </div>
+        </div>
+        <div class="row form">
+            <div class="col" style="width:50px; font-size:35px"><i class="fa fa-circle"></i></div>
+            <div class="skrij">
+                {{ specifikacijeForm.dolzina }}
+            </div>
+        </div>
+        <div class="row form">
+            <div class="col" style="width:50px; font-size:35px"><i class="fa fa-circle"></i></div>
+            <div class="skrij">
+                {{ specifikacijeForm.tip }}
+            </div>
+        </div>
+        <div class="row form">
+            <div class="col" style="width:50px; font-size:35px"><i class="fa fa-circle"></i></div>
+            <div class="skrij">
+                {{ specifikacijeForm.vtanka }}
+            </div>
+        </div>
+        <!--
+        <div class="row form">
+            <div class="col" style="width:50px; font-size:35px"><i class="fa fa-photo"></i></div>
+            <div class="skrij">
+                {{ addCar.imgfile }}
+            </div>
+        </div>-->
+        <button type="submit" class="gumb" style="margin-left: 47%">Pošlji</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block main %}
+{% load static %}
+<div class="first-grid row-padding container">
+    <div id="rezultat" class="content" style="margin-top: 50px;margin-bottom: 50px">
+        <h2 style="padding: 10px">Moji avtomobili:</h2>
+        <form action="#" method="POST">{% csrf_token %}
+            {{ porabaForm.avto }}
+            <label style="margin-left: 100px">Poraba:</label>
+            {{ porabaForm.poraba }}<br>
+            <input type="submit" value="Submit" class="gumb" style="margin-left: 20px">
+        </form>
+    </div>
+    <hr>
+    <div id="podatki" class="content" style="margin-top: 100px">
+        <table class="table striped half" style="float: left!important;font-size: 20px; margin-top: 40px">
+            <tr>
+                <th style="font-size:25px">Specifikacije</th>
+                <th style="font-size:25px">Vrednost</th>
+            </tr>
+            <tr>
+                <td>Višina</td>
+                <td>{{ visina }} mm</td>
+            </tr>
+            <tr>
+                <td>Dolžina</td>
+                <td>{{ dolzina }} mm</td>
+            </tr>
+            <tr>
+                <td>Tip goriva</td>
+                <td>{{ tip }}</td>
+            </tr>
+            <tr>
+                <td>Velikost rezervoarja</td>
+                <td>{{ tank  }} l</td>
+            </tr>
+            <tr>
+                <td>Povprečna poraba</td>
+                <td>{{ tr_poraba  }} l na 100 km</td>
+            </tr>
+        </table>
+    </div>
+    <hr>
+</div>
+<div id="section" class="content" >
+    <form>
+        <div id="com">
+            <textarea name="comments" id="comments" class="kom-box">Komentiraj!</textarea>
+        </div>
+        <input id="but1" type="button" value="Komentiraj"  class="gumb" onclick="komentar()">
+    </form>
+    <div id="c1" class="komentarji" style="display: block!important;">
+        <h2>Joža</h2>
+        <p>To je komentar, ta komentar je napisal uporabnik Joža za uporabnika test.</p>
+    </div>
+    <div id="c2" class="komentarji" style="display: block!important;">
+        <h2>Janez</h2>
+        <p>To je komentar, ta komentar je napisal uporabnik Janez za uporabnika test.</p>
+    </div>
+    <div id="c3" class="komentarji" style="display: block!important;">
+        <h2>hasan</h2>
+        <p>To je komentar, ta komentar je napisal uporabnik hasan za uporabnika test.</p>
+    </div>
+</div>
+{% endblock %}

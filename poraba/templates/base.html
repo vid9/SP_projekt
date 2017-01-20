@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'poraba/main.css' %}">
+        <link rel="stylesheet" href="{% static 'poraba/login.css' %}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {% if user.is_authenticated %}
+        {% endif %}
+        <script src="{% static 'media/map.js' %}" type="text/javascript"></script>
+        <script src="{% static 'media/iskanjePoAvtomobilih.js' %}" type="text/javascript"></script>
+        <script src="{% static 'media/navSmall.js' %}" type="text/javascript"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBZ4J1umOcxjyardgnt_4QYIrM-rn629JM&libraries=geometry,places&sensor=false" async defer></script>
+        <title>Poraba - mi skrbimo za vas</title>
+    </head>
+    <body style="margin: auto" onload="initMap()">
+        <!-- Navbar -->
+        <div style="position:fixed;width:100%;z-index:1;top:0">
+            <ul class="topnav" id="navigation">
+                {% if user.is_authenticated %}
+                <li><a href="{% url 'poraba' %}">DOMOV</a></li>
+                <li><a href="{% url 'search' %}">ISKANJE AVTOMOBILOV</a></li>
+                <li><a href="{% url 'add' %}">DODAJ AVTOMOBIL</a></li>
+                <li style="float: right;"><a href="{% url 'profil' %}">Prijavljen kot {{ user.username }}</a></li>
+                {% else %}
+                <li><a href="{% url 'poraba' %}">DOMOV</a></li>
+                <li><a href="{% url 'register' %}">REGISTRACIJA</a></li>
+                <li style="float: right;"><a href="{% url 'login' %}">PRIJAVA</a>
+                {% endif %}
+                <li class="icon">
+                    <a href="javascript:void(0);" onclick="smallBar()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+                </li>
+            </ul>
+            {% if user.is_authenticated %}
+              <a style="float: right" href="{% url 'logout' %}">Logout</a>
+            {% endif %}
+        </div>
+            {% block main %}
+            {% endblock %}
+        <footer>
+            <p>COPYRIGHT © 2016, VID ČERMELJ, ALL RIGHTS RESERVED.</p>
+        </footer>
+    </body>
+</html>

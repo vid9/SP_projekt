@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block main %}
+{% load static %}
+    <script src="{% static 'media/registration.js' %}" type="text/javascript"></script>
+    <form class="container login" method='POST' action="">{% csrf_token %}
+        <h2 style="text-align: center; font-size: 30px; color: black">Prosimo vnesite podatke</h2>
+        <div class="row form">
+            <div class="col" style="width:50px; font-size:35px"><i class="fa fa-user"></i></div>
+            <div class="skrij">
+                 {{ registrationForm.first_name }}
+            </div>
+        </div>
+        <div class="row form">
+            <div class="col" style="width:50px; font-size:35px"><i class="fa fa-user"></i></div>
+            <div class="skrij">
+                {{ registrationForm.last_name }}
+            </div>
+        </div>
+        <div class="row form">
+            <div class="col" style="width:50px; font-size:35px"><i class="fa fa-user"></i></div>
+            <div class="skrij">
+                 {{ registrationForm.username }}
+            </div>
+        </div>
+        <div class="row form">
+            <div class="col" style="width:50px; font-size:35px"><i class="fa fa-user"></i></div>
+            <div class="skrij">
+                 {{ registrationForm.password }}
+            </div>
+        </div>
+        <div class="row form">
+            <div class="col" style="width:50px; font-size:35px"><i class="fa fa-envelope-o"></i></div>
+            <div class="skrij">
+                {{ registrationForm.email }}
+            </div>
+        </div>
+
+            <button type="submit" class="gumb" style="margin-left: 47%">Pošlji</button>
+    </form>
+{% endblock %}
